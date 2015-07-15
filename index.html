@@ -9,9 +9,10 @@
 
 
     <script language="javascript" type="text/javascript" src="javascripts/p5/p5.min.js"></script>
-    <script language="javascript" type="text/javascript" src="javascripts/sketches/home.js"></script>
+    <script language="javascript" type="text/javascript" src="javascripts/sketches/flock.js"></script>
 
     <link href="stylesheets/styles.css" rel="stylesheet">
+    <link rel="canonical" href="https://dev.twitter.com/web/tweet-button">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,9 +23,17 @@
 
   </head>
   <body>
-
-  <!--<canvas id="sketch-container"></canvas>-->
 	
+	<!-- Facebook -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4&appId=205618992840571";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 	<section id="hero" class="container-fluid">
 
 		<div class="row">
@@ -50,13 +59,13 @@
 					</p>
 				
 					<div class="actions">
-						<a href="http://amzn.to/1TB1kUW" class="btn btn-primary">PRE ORDER AMAZON</a>
-						<a href="pdfs/LearningProcessing_2ed_sample_1and18.pdf" class="btn btn-default">DOWNLOAD SAMPLE</a>
+						<a href="http://amzn.to/1TB1kUW" target="_blank" class="btn btn-primary">PRE ORDER AMAZON</a>
+						<a href="pdfs/LearningProcessing_2ed_sample_1and18.pdf" target="_blank" class="btn btn-default">DOWNLOAD SAMPLE</a>
 					</div>
 
 					<img src="images/keyline.svg">
-					<a href="https://github.com/shiffman/LearningProcessing" class="meta-link">Code for all examples in Processing</a>
-					<a href="https://github.com/shiffman/LearningProcessing-p5.js" class="meta-link">Code for all examples ported to p5.js</a>
+					<a href="https://github.com/shiffman/LearningProcessing" target="_blank" class="meta-link">CODE FOR ALL EXAMPLES IN PROCESSING</a>
+					<a href="https://github.com/shiffman/LearningProcessing-p5.js" target="_blank" class="meta-link">CODE FOR ALL EXAMPLES PORTED TO P5.JS</a>
 
 				</div>
 
@@ -64,8 +73,12 @@
 
 			<div class="rhs">
 
+				<div class="social">
+					<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Learning%20Processing%202nd%20Edition&url=http:%3A%2F%2Flearningprocessing.com%2F" data-size="medium">Tweet</a>
+					<div class="fb-like" data-href="http://www.learningprocessing.com/" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+				</div>
 				<img src="images/book.png" width="230px" height="287px">
-				<span class="background-explainer"><a href="">MADE WITH PS5.JS</a></span>
+				<span class="background-explainer"><a href="">MADE WITH PS5.JS</a><br><a>DOWNLOAD THE WEBSITE</a></span>
 
 			</div>
 
@@ -73,8 +86,25 @@
 
 	</section>
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Twitter Function -->
+    <script>window.twttr = (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0],
+	    t = window.twttr || {};
+	  if (d.getElementById(id)) return t;
+	  js = d.createElement(s);
+	  js.id = id;
+	  js.src = "https://platform.twitter.com/widgets.js";
+	  fjs.parentNode.insertBefore(js, fjs);
+	 
+	  t._e = [];
+	  t.ready = function(f) {
+	    t._e.push(f);
+	  };
+	 
+	  return t;
+	}(document, "script", "twitter-wjs"));</script>
+
   </body>
 </html>
