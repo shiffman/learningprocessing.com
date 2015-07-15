@@ -16,6 +16,8 @@ $lato: 		'Lato', sans-serif;
 
 $font-small : 12px;
 
+$break-small: 768px;
+
 // Core
 
 body, html {
@@ -44,6 +46,15 @@ h1 {
 	color: $black;
 	letter-spacing: 6.4px;
 	line-height: 48px;
+	display: inline;
+
+	@media screen and (max-width: $break-small) {
+
+		font-size: 30px;
+		letter-spacing: 5px;
+		line-height: 35px;
+
+	}
 
 }
 
@@ -53,13 +64,19 @@ h3 {
 	color: $orange;
 	margin-top: 5px;
 
+	@media screen and (max-width: $break-small) {
+
+		margin-top: 15px;
+
+	}
+
 }
 
 a {
 
 	color: $orange;
 
-	&:hover {
+	&:hover, &:visited, &:active {
 		
 		color: $orange;
 
@@ -84,6 +101,13 @@ a {
 	font-size: $font-small;
 	font-weight: 900;
 
+	@media screen and (max-width: $break-small) {
+
+		width: 100%;
+		margin-bottom: 15px;
+
+	}
+
 }
 
 .btn-primary {
@@ -91,6 +115,7 @@ a {
 	transition: background 0.3s;
 	background: $orange;
 	border: none;
+	color: $white !important;
 
 	&:hover {
 		
@@ -148,12 +173,20 @@ section#hero {
 		.background-explainer {
 
 			position: absolute;
-			bottom: 30px;
+			bottom: 25px;
 			right: 30px;
 			text-align: right;
 			font-family: $lato;
 			font-size: $font-small;
+			color: #ffa500 !important;
 			font-weight: 700;
+			z-index: 1;
+
+			.extra-small {
+
+				font-size: 10px;
+
+			}
 
 		}
 
@@ -174,6 +207,25 @@ section#hero {
 
 		}
 
+		@media screen and (max-width: $break-small) {
+
+			width: 15px;
+			z-index: -1;
+
+		   img {
+
+		   	display: none ;
+
+		   }
+
+		   .background-explainer {
+
+		   		display: none;
+
+		   }
+		
+		}
+
 	}
 
 	.contain {
@@ -181,10 +233,22 @@ section#hero {
 		margin-top: 110px;
 		margin-bottom: 110px;
 
+		@media screen and (max-width: $break-small) {
+
+			margin-bottom: 30px;
+
+		}
+
 		p {
 
 			width: 80%;
 			margin: 30px 0 35px 0;
+
+			@media screen and (max-width: $break-small) {
+
+				width: 100%;
+
+			}
 
 		}
 
@@ -196,6 +260,26 @@ section#hero {
 
 	}
 
+	.edition-label {
+
+		display: inline-block;
+		padding: 5px 15px;
+		background: $orange;
+		border-radius: 2px;
+		color: $white;
+		font-size: $font-small;
+		font-family: $lato;
+		font-weight: 700;
+		vertical-align: top;
+  		margin-top: 12px;
+
+  		@media screen and (max-width: $break-small) {
+
+  			margin-top: 5px;
+
+  		}
+
+	}
 
 }
 
@@ -204,6 +288,8 @@ section#hero {
 	position: fixed;
 	top: 30px;
 	left: 30px;
+	transition: opacity 0.4s;
+	opacity: 1;
 
 	a {
 
@@ -218,6 +304,50 @@ section#hero {
 			pointer-events: none;
 
 		}
+
+	}
+
+	@media screen and (max-width: $break-small) {
+
+		&.scroll-hide {
+
+			opacity: 0;
+
+		}
+
+	}
+
+}
+
+.social {
+
+	.fb-like {
+
+		vertical-align: top;
+
+	}
+
+	.twitter-share-button {
+
+		margin-top: 2px;
+
+	}
+
+	@media screen and (max-width: $break-small) {
+
+		display: none;
+
+	}
+
+}
+
+.mobile-show {
+
+	display: none;
+
+	@media screen and (max-width: $break-small) {
+
+		display: block;
 
 	}
 
