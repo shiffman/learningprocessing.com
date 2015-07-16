@@ -63,12 +63,7 @@ h3 {
 	font-size: 20px;
 	color: $orange;
 	margin-top: 5px;
-
-	@media screen and (max-width: $break-small) {
-
-		margin-top: 15px;
-
-	}
+	margin-top: 15px;
 
 }
 
@@ -161,6 +156,18 @@ section#hero {
 	padding-right: 0;
 	padding: 30px 30px 0 30px;
 
+	.lhs {
+
+		min-height: 600px;
+
+		@media screen and (max-width: $break-small) {
+
+			height: auto!important;
+			margin-top: 80px;
+
+		}
+
+	}
 	.rhs {
 
 		position: fixed;
@@ -229,9 +236,6 @@ section#hero {
 	}
 
 	.contain {
-
-		margin-top: 110px;
-		margin-bottom: 110px;
 
 		@media screen and (max-width: $break-small) {
 
@@ -353,15 +357,19 @@ section#hero {
 
 }
 
-// Helpers
+//Helpers
 
-// .vert-center {
+.vert-center {
 
-// 	position: relative;
-//   	top: 50%;
-//   	transform: translateY(-50%);
+	@media screen and (min-width: $break-small) {
 
-// }
+		position: relative;
+  		top: 50%;
+  		transform: translateY(-50%);
+
+  	}
+
+}
 
 
 

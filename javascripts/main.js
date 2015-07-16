@@ -1,3 +1,12 @@
+$(document).ready(function(){
+
+	var height = ($(window).height()) - 60;
+	console.log(height);
+
+	$('.lhs').css({'height': height});
+
+});
+
 // For mobile only. Hide stamp when scrolled
 
 $(window).on('scroll', function() {
