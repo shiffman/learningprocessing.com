@@ -1,23 +1,25 @@
 var img;
 var smallPoint, largePoint;
 
-function setup() {
-  createCanvas(720, 400);
+function preload() {
   img = loadImage("../images/bg.jpg");
+}
+
+function setup() {
+  var canvas = createCanvas(windowWidth, windowHeight);
+  canvas.id('sketch-container'); 
   smallPoint = 4;
   largePoint = 40;
   imageMode(CENTER);
   noStroke();
-  background(255);
+  clear();
 }
 
 function draw() {
-
-  var pointillize = map(mouseX, 0, width, smallPoint, largePoint);
+  var pointillize = random(smallPoint, largePoint);
   var x = floor(random(img.width));
   var y = floor(random(img.height));
   var pix = img.get(x, y);
-  fill(pix, 128);
+  fill(pix, 52);
   ellipse(x, y, pointillize, pointillize);
-
 }

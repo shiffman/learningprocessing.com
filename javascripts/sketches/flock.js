@@ -1,27 +1,31 @@
 var flock;
 var text;
 
+var mouseV;
+
 function setup() {
   var canvas = createCanvas(windowWidth, windowHeight);
   canvas.id('sketch-container'); 
   
   flock = new Flock();
   // Add an initial set of boids into the system
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 50; i++) {
     var b = new Boid(width/2,height/2);
     flock.addBoid(b);
   }
+  mouseV = createVector();
 }
 
 function draw() {
   background(255);
   flock.run();
+  mouseV.set(mouseX, mouseY);
 }
 
 // Add a new boid into the System
-function mouseDragged() {
-  flock.addBoid(new Boid(mouseX,mouseY));
-}
+// function mouseDragged() {
+//   flock.addBoid(new Boid(mouseX,mouseY));
+// }
 
 // The Nature of Code
 // Daniel Shiffman
@@ -59,6 +63,8 @@ function Boid(x,y) {
   this.r = 3.0;
   this.maxspeed = 3;    // Maximum speed
   this.maxforce = 0.05; // Maximum steering force
+  this.points = []; 
+
 }
 
 Boid.prototype.run = function(boids) {
@@ -66,6 +72,10 @@ Boid.prototype.run = function(boids) {
   this.update();
   this.borders();
   this.render();
+  this.points.push(this.position.copy()); 
+  if (this.points.length > 10) {
+    this.points.splice(0,1);
+  }
 }
 
 Boid.prototype.applyForce = function(force) {
@@ -78,14 +88,27 @@ Boid.prototype.flock = function(boids) {
   var sep = this.separate(boids);   // Separation
   var ali = this.align(boids);      // Alignment
   var coh = this.cohesion(boids);   // Cohesion
+  var mouse = this.afraid();
   // Arbitrarily weight these forces
   sep.mult(1.5);
   ali.mult(1.0);
   coh.mult(1.0);
+  mouse.mult(5.0);
   // Add the force vectors to acceleration
   this.applyForce(sep);
   this.applyForce(ali);
   this.applyForce(coh);
+  this.applyForce(mouse);
+}
+
+Boid.prototype.afraid = function() {
+  if (p5.Vector.dist(mouseV, this.position) < 100) {
+    var v = this.seek(mouseV);
+    v.mult(-1);
+    return v;
+  } else {
+    return createVector();
+  }
 }
 
 // Method to update location
@@ -115,17 +138,28 @@ Boid.prototype.seek = function(target) {
 Boid.prototype.render = function() {
   // Draw a triangle rotated in the direction of velocity
   var theta = this.velocity.heading() + radians(90);
-  fill(255, 222, 0);
-  stroke(255, 222, 0);
-  push();
-  translate(this.position.x,this.position.y);
-  rotate(theta);
-  beginShape();
-  vertex(0, -this.r*2);
-  vertex(-this.r, this.r*2);
-  vertex(this.r, this.r*2);
-  endShape(CLOSE);
-  pop();
+  // fill(255, 222, 0);
+  // stroke(255, 222, 0);
+  // push();
+  // translate(this.position.x,this.position.y);
+  // rotate(theta);
+  // beginShape();
+  // vertex(0, -this.r*2);
+  // vertex(-this.r, this.r*2);
+  // vertex(this.r, this.r*2);
+  // endShape(CLOSE);
+  // pop();
+
+  // Draw everything
+  for (var i = 0; i < this.points.length; i++) {
+     // Draw an ellipse for each element in the arrays. 
+     // Color and size are tied to the loop's counter: i.
+    noStroke();
+    // fill(255, 222, 0, map(i,0,this.points.length-1,0,255));
+    fill(255, 222, 0, 127);
+    ellipse(this.points[i].x,this.points[i].y,i,i);
+  }
+
 }
 
 // Wraparound
