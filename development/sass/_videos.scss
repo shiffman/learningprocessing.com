@@ -1,0 +1,90 @@
+
+section#video-window {
+
+	padding-top: 100px;
+
+	.video-actions {
+
+		margin: 15px auto;
+
+	}
+
+	.video-container {
+
+		margin-top: 25px;
+
+	}
+
+}
+
+.annotations {
+
+	padding: 100px 30px;
+
+	h5 {
+
+		font-family: $lato;
+		font-size: 12px;
+		color: #B9A93E;
+		margin: 0;
+		font-weight: 900;
+
+	}
+
+	.annotation-panel {
+
+		padding: 10px 0px 0px;
+		margin-bottom: 10px;
+		background: $white;
+		border-radius: 4px;
+
+		span {
+
+			font-family: $lato;
+			font-size: 12px;
+			color: #8C8C8C;
+			font-weight: 700;
+
+		}
+
+		p {
+			font-size: 15px;
+		}
+
+	}
+
+}
+
+.download-list {
+
+	a.download {
+
+		padding: 15px;
+		display: block;
+		background: $white;
+		border: 1px solid #DADADA;
+		border-radius: 2px;
+		margin-bottom: 10px;
+		color: $black;
+		font-size: 15px;
+
+		img {
+
+			margin-right: 15px;
+
+		}
+
+		&:hover {
+
+			border: 1px solid $orange;
+			text-decoration: none;
+			-webkit-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.1);
+			-moz-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.1);
+			box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.1);
+
+		}
+
+	}
+
+}
+

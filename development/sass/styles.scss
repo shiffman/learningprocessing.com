@@ -1,22 +1,13 @@
 @import "bootstrap-compass";
 @import "bootstrap-variables";
 @import "bootstrap";
+@import "variables";
+@import "excercises";
+@import "article";
+@import "videos";
 
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Alice);
-
-$yellow: 	#FFDE00;
-$orange: 	#ED462F;
-$brown: 	#7B7B62;
-$black: 	#404040;
-$white: 	#ffffff;
-
-$alice: 	'Alice', serif;
-$lato: 		'Lato', sans-serif;
-
-$font-small : 12px;
-
-$break-small: 768px;
 
 // Core
 
@@ -245,6 +236,12 @@ canvas#sketch-container {
 		position: absolute;
 		top: 30px;
 		right: 30px;
+
+	}
+
+	&.canvas {
+
+		background: $black;
 
 	}
 
