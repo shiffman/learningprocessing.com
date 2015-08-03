@@ -141,8 +141,20 @@ nav {
 	display: block;
 	z-index: 2;
 
+	.left-fade {
+
+		position: fixed;
+		left: 0;
+		width: 30px;
+		height: 100%;
+		background: url('../images/left-fade.png') repeat-y;
+		z-index: 10;
+
+	}
+
 	ul {
 
+		transition: padding 0.5s;
 		padding-left: 30px;
 		
 		li {
@@ -161,8 +173,8 @@ nav {
 			padding-left: 5px;
 
 			li a {
-
-				opacity: 0.5;
+				transition: opacity 0.5s;
+				opacity: 0.3;
 
 			}
 
@@ -171,7 +183,15 @@ nav {
 		ul.links-level-2 {
 
 			margin: 15px 0;
-			padding-left: 30px;
+			padding: 10px 0px 10px 30px;
+  			overflow: scroll;
+
+  			&.scroll-borders {
+
+  				border-top: 2px solid #F1F1E2;
+  				border-bottom: 2px solid #F1F1E2;
+  				
+  			}
 
 			li a {
 
@@ -180,6 +200,22 @@ nav {
 				&.active-page {
 
 					color: $black;
+
+				}
+
+			}
+
+		}
+
+		&.in {
+
+			ul {
+
+				padding-left: 30px;
+
+				li a {
+
+					opacity: 1;
 
 				}
 
