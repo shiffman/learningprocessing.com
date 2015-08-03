@@ -1,13 +1,22 @@
 @import "bootstrap-compass";
 @import "bootstrap-variables";
 @import "bootstrap";
-@import "variables";
-@import "excercises";
-@import "article";
-@import "videos";
 
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Alice);
+
+$yellow: 	#FFDE00;
+$orange: 	#ED462F;
+$brown: 	#7B7B62;
+$black: 	#404040;
+$white: 	#ffffff;
+
+$alice: 	'Alice', serif;
+$lato: 		'Lato', sans-serif;
+
+$font-small : 12px;
+
+$break-small: 768px;
 
 // Core
 
@@ -27,7 +36,7 @@ body {
 
 }
 
-//Typography
+//Typepography
 
 h1 {
 
@@ -127,105 +136,7 @@ a {
 
 }
 
-// CORE
-
-nav {
-
-	position: fixed;
-	top: 124px;
-	left: 0px;
-	width: 200px;
-	font-family: $lato;
-	font-size: $font-small;
-	font-weight: 700;
-	display: block;
-	z-index: 2;
-
-	.left-fade {
-
-		position: fixed;
-		left: 0;
-		width: 30px;
-		height: 100%;
-		background: url('../images/left-fade.png') repeat-y;
-		z-index: 10;
-
-	}
-
-	ul {
-
-		transition: padding 0.5s;
-		padding-left: 30px;
-		
-		li {
-
-			list-style-type: none;
-			padding: 2px 0;
-
-		}
-
-	}
-
-	&.level-2 {
-
-		ul {
-
-			padding-left: 5px;
-
-			li a {
-				transition: opacity 0.5s;
-				opacity: 0.3;
-
-			}
-
-		}
-
-		ul.links-level-2 {
-
-			margin: 15px 0;
-			padding: 10px 0px 10px 30px;
-  			overflow: scroll;
-
-  			&.scroll-borders {
-
-  				border-top: 2px solid #F1F1E2;
-  				border-bottom: 2px solid #F1F1E2;
-  				
-  			}
-
-			li a {
-
-				opacity: 1;
-
-				&.active-page {
-
-					color: $black;
-
-				}
-
-			}
-
-		}
-
-		&.in {
-
-			ul {
-
-				padding-left: 30px;
-
-				li a {
-
-					opacity: 1;
-
-				}
-
-			}
-
-		}
-
-	}
-
-}
+// Landing Page
 
 canvas#sketch-container {
 
@@ -235,131 +146,6 @@ canvas#sketch-container {
 	top: 0;
 	left: 0;
 	z-index: -99;
-
-}
-
-.rhs {
-
-	position: fixed;
-	right: 0px;
-	top: 0px;
-	width: 40%;
-	min-height: 100%;
-	background: rgba(255,222,0,0.7);
-
-	.background-explainer {
-
-		position: absolute;
-		bottom: 25px;
-		right: 30px;
-		text-align: right;
-		font-family: $lato;
-		font-size: $font-small;
-		color: #ffa500 !important;
-		font-weight: 700;
-		z-index: 1;
-
-		.extra-small {
-
-			font-size: 10px;
-
-		}
-
-	}
-
-	.social {
-
-		position: absolute;
-		top: 30px;
-		right: 30px;
-
-	}
-
-	&.canvas {
-
-		background: $black;
-
-	}
-
-	@media screen and (max-width: $break-small) {
-
-		width: 15px;
-		z-index: -1;
-
-	   img {
-
-	   	display: none ;
-
-	   }
-
-	   .background-explainer {
-
-	   		display: none;
-
-	   }
-	
-	}
-
-}
-
-section#content {
-
-	padding-top: 120px;
-
-	h1 {
-
-		margin: 0 0 10px;
- 		display: inline-block;
-
-	}
-
-}
-
-section#code-window {
-
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 600px;
-	border-left: 2px solid #f1f1f1;
-	padding: 0;
-
-	.code-tab {
-
-		width: 100%;
-		background: $orange;
-		height: 50px;
-
-		a {
-
-			display: inline-block;
-			padding: 0 30px;
-			line-height: 50px;
-			color: $white;
-			font-family: $lato;
-			font-size: $font-small;
-			font-weight: 700;
-			display: inline-block;
-
-		}
-
-	}
-
-	.code-container {
-
-		overflow: scroll;
-		height: 100%;
-
-		pre {
-
-			border-radius: none;
-			background: none;
-			border: none;
-			
-		}
-
-	}
 
 }
 
@@ -505,32 +291,21 @@ section#hero {
 
 	position: fixed;
 	top: 30px;
-	left: 25px;
+	left: 30px;
 	transition: opacity 0.4s;
 	opacity: 1;
-	z-index: 1;
 
 	a {
 
-		transition: border 0.4s;
 		font-family: $lato;
 		font-size: $font-small;
 		font-weight: 700;
 		display: block;
-		padding-left: 5px;
-		border-left: 2px solid $white;
 
 		&.active {
 
 			color: $black;
 			pointer-events: none;
-
-		}
-
-		&:hover{
-
-			border-left: 2px solid $orange;
-			text-decoration: none;
 
 		}
 
