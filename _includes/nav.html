@@ -1,14 +1,29 @@
 <nav>
   <ul>
     <li><a href="/examples">EXAMPLES</a></li>
+      <ul class="nav-level-2">
+        {% for p in site.categories.example %}
+          {% if p.categories == page.categories %}
+            <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     <li><a href="/excercises">EXERCISES</a></li>
-      <!-- <ul class="nav-level-2">
-        <li><a href="">SECOND LINK</a></li>
-        <li><a href="">SECOND LINK</a></li>
-        <li><a href="">SECOND LINK</a></li>
-        <li><a href="">SECOND LINK</a></li>
-      </ul> -->
+      <ul class="nav-level-2">
+        {% for p in site.categories.excercise %}
+          {% if p.categories == page.categories %}
+            <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     <li><a href="/videos">VIDEOS</a></li>
+      <ul class="nav-level-2">
+        {% for p in site.categories.video %}
+          {% if p.categories == page.categories %}
+            <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     <li><a href="/downloads">DOWNLOADS</a></li>
     <li><a href="/resources">RESOURCES</a></li>
 

@@ -8717,41 +8717,45 @@ section#hero .edition-label {
   border-left: 2px solid #ED462F;
   text-decoration: none;
 }
+/* line 539, ../sass/styles.scss */
+.stamp img {
+  margin-left: 7px;
+}
 @media screen and (max-width: 768px) {
-  /* line 541, ../sass/styles.scss */
+  /* line 547, ../sass/styles.scss */
   .stamp.scroll-hide {
     opacity: 0;
   }
 }
 
-/* line 553, ../sass/styles.scss */
+/* line 559, ../sass/styles.scss */
 .social .fb-like {
   vertical-align: top;
 }
-/* line 559, ../sass/styles.scss */
+/* line 565, ../sass/styles.scss */
 .social .twitter-share-button {
   margin-top: 2px;
 }
 @media screen and (max-width: 768px) {
-  /* line 551, ../sass/styles.scss */
+  /* line 557, ../sass/styles.scss */
   .social {
     display: none;
   }
 }
 
-/* line 573, ../sass/styles.scss */
+/* line 579, ../sass/styles.scss */
 .mobile-show {
   display: none;
 }
 @media screen and (max-width: 768px) {
-  /* line 573, ../sass/styles.scss */
+  /* line 579, ../sass/styles.scss */
   .mobile-show {
     display: block;
   }
 }
 
 @media screen and (min-width: 768px) {
-  /* line 587, ../sass/styles.scss */
+  /* line 593, ../sass/styles.scss */
   .vert-center {
     position: relative;
     top: 50%;
