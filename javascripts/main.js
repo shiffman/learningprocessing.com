@@ -1,9 +1,13 @@
 $(document).ready(function(){
 
 	var height = ($(window).height()) - 60;
-	console.log(height);
-
 	$('.lhs').css({'height': height});
+
+	if($('.secondary-link').length != 0) {
+
+		$('nav').addClass('level-2');
+
+	}
 
 });
 

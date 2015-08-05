@@ -1,31 +1,47 @@
 <nav>
   <ul>
+    {% if page.group != "example" %}
     <li><a href="/examples">EXAMPLES</a></li>
-      <ul class="nav-level-2">
-        {% for p in site.categories.example %}
-          
-            <li><a href="{{ p.url }}">{{ p.title }}</a></li>
-          
-        {% endfor %}
-      </ul>
+    {% endif %}
+      {% if page.group == "example" %}
+            <ul class="links-level-2">
+              <li><a class="active-page" href="/examples">EXAMPLES</a></li>
+              {% for post in site.posts %}
+                {% if post.group == "example" %}
+                  <li><a class="secondary-link" href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+      {% endif %}
+
+    {% if page.group != "excercise" %}
     <li><a href="/excercises">EXERCISES</a></li>
-      <ul class="nav-level-2">
-        {% for p in site.categories.excercise %}
-          
-            <li><a href="{{ p.url }}">{{ p.title }}</a></li>
-         
-        {% endfor %}
-      </ul>
+    {% endif %}
+        {% if page.group == "excercise" %}
+            <ul class="links-level-2">
+              <li><a class="active-page" href="/excercises">EXERCISES</a></li>
+              {% for post in site.posts %}
+                {% if post.group == "excercise" %}
+                  <li><a class="secondary-link" href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+        {% endif %}
+    
+    {% if page.group != "video" %}
     <li><a href="/videos">VIDEOS</a></li>
-      <ul class="nav-level-2">
-        {% for p in site.categories.video %}
-          
-            <li><a href="{{ p.url }}">{{ p.title }}</a></li>
-          
-        {% endfor %}
-      </ul>
+    {% endif %}
+        {% if page.group == "video" %}
+            <ul class="links-level-2">
+              <li><a class="active-page" href="/videos">VIDEOS</a></li>
+               {% for post in site.posts %}
+                  {% if post.group == "video" %}
+                    <li><a class="secondary-link" href="{{ post.url }}">{{ post.title }}</a></li>
+                  {% endif %}
+              {% endfor %}
+            </ul>
+        {% endif %}
     <li><a href="/downloads">DOWNLOADS</a></li>
     <li><a href="/resources">RESOURCES</a></li>
-
   </ul>
 </nav>

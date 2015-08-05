@@ -134,7 +134,7 @@ nav {
 	position: fixed;
 	top: 124px;
 	left: 0px;
-	width: 200px;
+	width: 240px;
 	font-family: $lato;
 	font-size: $font-small;
 	font-weight: 700;
@@ -154,7 +154,7 @@ nav {
 
 	ul {
 
-		transition: padding 0.5s;
+		transition: padding 0.3s;
 		padding-left: 30px;
 		
 		li {
@@ -173,7 +173,7 @@ nav {
 			padding-left: 5px;
 
 			li a {
-				transition: opacity 0.5s;
+				transition: opacity 0.3s;
 				opacity: 0.3;
 
 			}
@@ -218,6 +218,12 @@ nav {
 					opacity: 1;
 
 				}
+
+			}
+
+			ul.links-level-2 {
+
+				padding-left: 0;
 
 			}
 
