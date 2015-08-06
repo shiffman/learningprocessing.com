@@ -14,14 +14,14 @@
             </ul>
       {% endif %}
 
-    {% if page.group != "excercise" %}
-    <li><a href="/excercises">EXERCISES</a></li>
+    {% if page.group != "exercise" %}
+    <li><a href="/exercises">EXERCISES</a></li>
     {% endif %}
-        {% if page.group == "excercise" %}
+        {% if page.group == "exercise" %}
             <ul class="links-level-2">
-              <li><a class="active-page" href="/excercises">EXERCISES</a></li>
+              <li><a class="active-page" href="/exercises">EXERCISES</a></li>
               {% for post in site.posts %}
-                {% if post.group == "excercise" %}
+                {% if post.group == "exercise" %}
                   <li><a class="secondary-link" href="{{ post.url }}">{{ post.title }}</a></li>
                 {% endif %}
               {% endfor %}
