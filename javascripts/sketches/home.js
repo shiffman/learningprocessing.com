@@ -3,6 +3,7 @@
 var points = []; 
 
 function setup() {
+  
   var canvas = createCanvas(windowWidth, windowHeight);
   canvas.id('sketch-container'); 
 

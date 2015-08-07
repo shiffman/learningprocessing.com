@@ -12,9 +12,8 @@ layout: default
     </div>
 
     <div class="code-tab">
-      <a href="" class="code-link">CODE LINK</a>
-      <a href="" class="code-link">CODE LINK</a>
-      <a href="" class="code-link">CODE LINK</a>
+      <input id="js-files" type="hidden" value="{{ page.js-files }}"/>
+      <input id="pde-files" type="hidden" value="{{ page.pde-files }}"/>
     </div>
 
     <div class="code-container">
@@ -31,6 +30,8 @@ layout: default
 
   </section>
 
-  <section class="rhs canvas">
+  <section id="sketch-container" class="rhs canvas">
 
   </section>
+
+  <script language="javascript" type="text/javascript" src="/javascripts/exercise.js"></script>
