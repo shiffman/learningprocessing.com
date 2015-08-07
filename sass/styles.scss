@@ -141,6 +141,42 @@ nav {
 	display: block;
 	z-index: 2;
 
+	@media screen and (max-width: $break-medium) {
+
+		transition: left 0.5s;
+	    background-color: #ffffff;
+	    height: 100%;
+	    padding: 30px;
+	    top: 0;
+	    width: 300px;
+	    left: -300px;
+	    overflow: scroll;
+	    z-index: 9999;
+
+	    &.level-2 {
+
+	    	ul {
+
+				padding-left: 0px !important;
+
+				li a {
+
+					opacity: 1 !important;
+
+				}
+
+			}
+
+	    }
+
+	    &.open {
+
+	    	left: 0;
+
+	    }
+
+	}
+
 	.left-fade {
 
 		position: fixed;
@@ -149,6 +185,10 @@ nav {
 		height: 100%;
 		background: url('../images/left-fade.png') repeat-y;
 		z-index: 10;
+
+		@media screen and (max-width: $break-medium) {
+			display: none;
+		}
 
 	}
 
@@ -321,16 +361,38 @@ section#content {
 
 }
 
+.lhs {
+
+	@media screen and (max-width: $break-medium) {
+
+		margin-top: 100px;
+
+	}
+
+}
+
 section#code-window {
 
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
-	width: 600px;
+	width: 44%;
 	border-left: 2px solid #f1f1f1;
 	padding: 0;
 	overflow: scroll;
+
+	@media screen and (max-width: $break-medium) {
+
+		width: 60%;
+
+	}
+
+	@media screen and (max-width: $break-small) {
+
+		width: 100%;
+
+	}
 
 	.code-tab {
 
@@ -505,6 +567,29 @@ section#hero {
   		}
 
 	}
+
+}
+
+header {
+
+	width: 100%;
+    position: fixed;
+    height: 110px;
+    z-index: 9998;
+    
+    .mobile-nav-button {
+
+    	position: absolute;
+    	right: 30px;
+    	top: 30px;
+
+    	a {
+
+    		display: block;
+
+    	}
+
+    }
 
 }
 

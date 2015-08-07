@@ -2,22 +2,24 @@
 layout: default
 ---
 
-  <section id="video-window" class="col-md-5 col-md-offset-2">
+  <section id="video-window" class="col-md-5 col-md-offset-2 lhs">
 
     <span class="reference-label"></span>
     <h1 class="article-title">{{ page.title }}</h1>
     {{ content }}
 
     <div class="video-container">
-      <iframe src="https://player.vimeo.com/video/71113840?color=336699&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      {{ page.video }}
     </div>
     <div class="video-actions">
       <div class="row">
         <div class="col-xs-6">
-          <a class="meta-link">DOWNLOAD CODE</a>
+          {% if page.downloadcode != 'none' %}
+          <a href="{{ page.downloadcode }}" class="meta-link" target="_blank">DOWNLOAD CODE</a>
+          {% endif %}
         </div>
         <div class="col-xs-6 text-right">
-          <a class="meta-link">FULLSCREEN</a>
+          <a class="meta-link fullscreen">FULLSCREEN</a>
         </div>
       </div>
     </div>
@@ -25,6 +27,8 @@ layout: default
   </section>
 
   <section class="rhs">
+
+    {% if page.annotations != 'none' %}
 
     <div class="annotations">
 
@@ -38,43 +42,26 @@ layout: default
         <br>
       </div>
 
+      <!-- Loop through -->
+
       <div class="annotation-panel row">
         <div class="col-xs-1">
-          <span>02:20</span>
+          <span class="time-stamp">02:20</span>
         </div>
-        <div class="col-xs-11">
+        <div class="col-xs-11 annotation-content">
           <p>View O’Reilly Media's <a>History of Programming
         Languages</a> poster.</p>
         </div>
       </div>
 
-      <div class="annotation-panel row">
-        <div class="col-xs-1">
-          <span>02:20</span>
-        </div>
-        <div class="col-xs-11">
-          <p>View O’Reilly Media's <a>History of Programming
-        Languages</a> poster.</p>
-        </div>
-      </div>
-
-      <div class="annotation-panel row">
-        <div class="col-xs-1">
-          <span>02:20</span>
-        </div>
-        <div class="col-xs-11">
-          <p>View O’Reilly Media's <a>History of Programming
-        Languages</a> poster.</p>
-        </div>
-      </div>
+      <!-- End loop -->
 
     </div>
+
+    {% endif %}
 
   </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="/javascripts/jquery.fitvids.js"></script>
     <script language="javascript" type="text/javascript" src="/javascripts/videos.js"></script>
-
-  </body>
-</html>

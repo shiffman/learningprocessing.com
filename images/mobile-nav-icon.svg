@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 58 + Rectangle 58 Copy + Rectangle 58 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="About-mobile" sketch:type="MSArtboardGroup" transform="translate(-30.000000, -24.000000)" fill="#ED462F">
+            <g id="Rectangle-58-+-Rectangle-58-Copy-+-Rectangle-58-Copy-2" sketch:type="MSLayerGroup" transform="translate(30.000000, 24.000000)">
+                <rect id="Rectangle-58" sketch:type="MSShapeGroup" x="0" y="0" width="24" height="4" rx="1"></rect>
+                <rect id="Rectangle-58-Copy" sketch:type="MSShapeGroup" x="0" y="9" width="16" height="4" rx="1"></rect>
+                <rect id="Rectangle-58-Copy-2" sketch:type="MSShapeGroup" x="0" y="18" width="24" height="4" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
