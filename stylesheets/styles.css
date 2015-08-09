@@ -8748,21 +8748,23 @@ section#hero .edition-label {
 header {
   width: 100%;
   position: fixed;
+  left: 0;
+  top: 0;
   height: 110px;
   z-index: 9998;
 }
-/* line 580, ../sass/styles.scss */
+/* line 582, ../sass/styles.scss */
 header .mobile-nav-button {
   position: absolute;
   right: 30px;
   top: 30px;
 }
-/* line 586, ../sass/styles.scss */
+/* line 588, ../sass/styles.scss */
 header .mobile-nav-button a {
   display: block;
 }
 
-/* line 596, ../sass/styles.scss */
+/* line 598, ../sass/styles.scss */
 .stamp {
   position: fixed;
   top: 30px;
@@ -8771,7 +8773,7 @@ header .mobile-nav-button a {
   opacity: 1;
   z-index: 1;
 }
-/* line 605, ../sass/styles.scss */
+/* line 607, ../sass/styles.scss */
 .stamp a {
   transition: border 0.4s;
   font-family: "Lato", sans-serif;
@@ -8781,55 +8783,55 @@ header .mobile-nav-button a {
   padding-left: 5px;
   border-left: 2px solid #ffffff;
 }
-/* line 615, ../sass/styles.scss */
+/* line 617, ../sass/styles.scss */
 .stamp a.active {
   color: #404040;
   pointer-events: none;
 }
-/* line 622, ../sass/styles.scss */
+/* line 624, ../sass/styles.scss */
 .stamp a:hover {
   border-left: 2px solid #ED462F;
   text-decoration: none;
 }
-/* line 631, ../sass/styles.scss */
+/* line 633, ../sass/styles.scss */
 .stamp img {
   margin-left: 7px;
 }
 @media screen and (max-width: 768px) {
-  /* line 639, ../sass/styles.scss */
+  /* line 641, ../sass/styles.scss */
   .stamp.scroll-hide {
     opacity: 0;
   }
 }
 
-/* line 651, ../sass/styles.scss */
+/* line 653, ../sass/styles.scss */
 .social .fb-like {
   vertical-align: top;
 }
-/* line 657, ../sass/styles.scss */
+/* line 659, ../sass/styles.scss */
 .social .twitter-share-button {
   margin-top: 2px;
 }
 @media screen and (max-width: 768px) {
-  /* line 649, ../sass/styles.scss */
+  /* line 651, ../sass/styles.scss */
   .social {
     display: none;
   }
 }
 
-/* line 671, ../sass/styles.scss */
+/* line 673, ../sass/styles.scss */
 .mobile-show {
   display: none;
 }
 @media screen and (max-width: 768px) {
-  /* line 671, ../sass/styles.scss */
+  /* line 673, ../sass/styles.scss */
   .mobile-show {
     display: block;
   }
 }
 
 @media screen and (min-width: 768px) {
-  /* line 685, ../sass/styles.scss */
+  /* line 687, ../sass/styles.scss */
   .vert-center {
     position: relative;
     top: 50%;

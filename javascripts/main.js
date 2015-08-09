@@ -29,6 +29,7 @@ $(document).ready(function(){
 
 $(window).on('scroll', function() {
 
+	console.log('scroll');
 	if ($(this).scrollTop() > 40) {
 
         $('.stamp').addClass('scroll-hide');
