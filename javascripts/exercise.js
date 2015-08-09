@@ -38,19 +38,19 @@ function populateCodeWindow(file) {
 
 function initiateCode(file) {
 
-	// Need to run the code from the .js sketch here and assign into $('#sketch-container');
-	// For the moment I've just copied and paste excercise code into here.
-	function setup() {
-	  var canvas = createCanvas(200, 200);
-	  canvas.id = 'sketch-container';
-	  background(255);
-	}
+// 	// Need to run the code from the .js sketch here and assign into $('#sketch-container');
+// 	// For the moment I've just copied and paste excercise code into here.
+// 	function setup() {
+// 	  var canvas = createCanvas(200, 200);
+// 	  canvas.parent('sketch-container');
+// 	  background(255);
+// 	}
 
-	function draw() {
-	  stroke(0);
-	  strokeWeight(abs(pmouseX - mouseX));
-	  line(pmouseX, pmouseY, mouseX, mouseY);
-	}
+// 	function draw() {
+// 	  stroke(0);
+// 	  strokeWeight(abs(pmouseX - mouseX));
+// 	  line(pmouseX, pmouseY, mouseX, mouseY);
+// 	}
 
 }
 
