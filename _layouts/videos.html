@@ -8,18 +8,19 @@ layout: default
     <h1 class="article-title">{{ page.title }}</h1>
     {{ content }}
 
-    <div class="video-container">
-      {{ page.video }}
+    <input id="video-url" type="hidden" value="{{ page.video }}">
+    <div id="video" class="video-container" style="height: 50%">
+        
     </div>
     <div class="video-actions">
       <div class="row">
         <div class="col-xs-6">
           {% if page.downloadcode != 'none' %}
-          <a href="{{ page.downloadcode }}" class="meta-link" target="_blank">DOWNLOAD CODE</a>
+            <a href="{{ page.downloadcode }}" class="meta-link" target="_blank">DOWNLOAD CODE</a>
           {% endif %}
         </div>
         <div class="col-xs-6 text-right">
-          <a class="meta-link fullscreen">FULLSCREEN</a>
+          <!-- <a class="meta-link fullscreen">FULLSCREEN</a> -->
         </div>
       </div>
     </div>
@@ -37,22 +38,24 @@ layout: default
           <h5>ANNOTATIONS</h5>
         </div>
         <div class="col-xs-6 text-right">
-          <a class="meta-link">VIEW ALL</a>
+          <a class="meta-link view-all">VIEW ALL</a>
         </div>
         <br>
       </div>
 
       <!-- Loop through -->
-
-      <div class="annotation-panel row">
-        <div class="col-xs-1">
-          <span class="time-stamp">02:20</span>
+      {% for annotation in page.annotations %}
+        <div class="annotation-panel row" data-start="{{ annotation.start }}" data-end="{{ annotation.end }}">
+          <div class="col-xs-1">
+            <span class="time-stamp">{{ annotation.start }}</span>
+          </div>
+          <div class="col-xs-11 annotation-content">
+            <p>
+              {{ annotation.content }}
+            </p>
+          </div>
         </div>
-        <div class="col-xs-11 annotation-content">
-          <p>View O’Reilly Media's <a>History of Programming
-        Languages</a> poster.</p>
-        </div>
-      </div>
+      {% endfor %}
 
       <!-- End loop -->
 
@@ -64,4 +67,5 @@ layout: default
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="/javascripts/jquery.fitvids.js"></script>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
     <script language="javascript" type="text/javascript" src="/javascripts/videos.js"></script>

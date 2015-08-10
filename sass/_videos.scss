@@ -37,6 +37,7 @@ section#video-window {
 		margin-bottom: 10px;
 		background: $white;
 		border-radius: 4px;
+		display: none;
 
 		span {
 
@@ -49,6 +50,12 @@ section#video-window {
 
 		p {
 			font-size: 15px;
+		}
+
+		&.force-show {
+
+			display: block !important;
+
 		}
 
 	}

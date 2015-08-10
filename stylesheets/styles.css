@@ -8212,6 +8212,13 @@ button.close {
   margin-top: 25px;
 }
 
+/* line 11, ../sass/_exercises.scss */
+#defaultCanvas {
+  margin: 100px auto;
+  position: relative;
+  display: block;
+}
+
 /* line 2, ../sass/_article.scss */
 span.reference-label {
   font-family: "Lato", sans-serif;
@@ -8263,20 +8270,25 @@ section#video-window .video-container {
   margin-bottom: 10px;
   background: #ffffff;
   border-radius: 4px;
+  display: none;
 }
-/* line 41, ../sass/_videos.scss */
+/* line 42, ../sass/_videos.scss */
 .annotations .annotation-panel span {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   color: #8C8C8C;
   font-weight: 700;
 }
-/* line 50, ../sass/_videos.scss */
+/* line 51, ../sass/_videos.scss */
 .annotations .annotation-panel p {
   font-size: 15px;
 }
+/* line 55, ../sass/_videos.scss */
+.annotations .annotation-panel.force-show {
+  display: block !important;
+}
 
-/* line 60, ../sass/_videos.scss */
+/* line 67, ../sass/_videos.scss */
 .download-list a.download {
   padding: 15px;
   display: block;
@@ -8287,11 +8299,11 @@ section#video-window .video-container {
   color: #404040;
   font-size: 15px;
 }
-/* line 71, ../sass/_videos.scss */
+/* line 78, ../sass/_videos.scss */
 .download-list a.download img {
   margin-right: 15px;
 }
-/* line 77, ../sass/_videos.scss */
+/* line 84, ../sass/_videos.scss */
 .download-list a.download:hover {
   border: 1px solid #ED462F;
   text-decoration: none;
@@ -8473,7 +8485,7 @@ nav.level-2 ul li a {
 /* line 223, ../sass/styles.scss */
 nav.level-2 ul.links-level-2 {
   margin: 15px 0;
-  padding: 10px 0px 10px 30px;
+  padding: 10px 0px 10px 25px;
   overflow: scroll;
 }
 /* line 229, ../sass/styles.scss */
@@ -8763,8 +8775,14 @@ header .mobile-nav-button {
 header .mobile-nav-button a {
   display: block;
 }
+@media screen and (min-width: 992px) {
+  /* line 582, ../sass/styles.scss */
+  header .mobile-nav-button {
+    display: none;
+  }
+}
 
-/* line 598, ../sass/styles.scss */
+/* line 604, ../sass/styles.scss */
 .stamp {
   position: fixed;
   top: 30px;
@@ -8773,7 +8791,7 @@ header .mobile-nav-button a {
   opacity: 1;
   z-index: 1;
 }
-/* line 607, ../sass/styles.scss */
+/* line 613, ../sass/styles.scss */
 .stamp a {
   transition: border 0.4s;
   font-family: "Lato", sans-serif;
@@ -8783,55 +8801,55 @@ header .mobile-nav-button a {
   padding-left: 5px;
   border-left: 2px solid #ffffff;
 }
-/* line 617, ../sass/styles.scss */
+/* line 623, ../sass/styles.scss */
 .stamp a.active {
   color: #404040;
   pointer-events: none;
 }
-/* line 624, ../sass/styles.scss */
+/* line 630, ../sass/styles.scss */
 .stamp a:hover {
   border-left: 2px solid #ED462F;
   text-decoration: none;
 }
-/* line 633, ../sass/styles.scss */
+/* line 639, ../sass/styles.scss */
 .stamp img {
   margin-left: 7px;
 }
 @media screen and (max-width: 768px) {
-  /* line 641, ../sass/styles.scss */
+  /* line 647, ../sass/styles.scss */
   .stamp.scroll-hide {
     opacity: 0;
   }
 }
 
-/* line 653, ../sass/styles.scss */
+/* line 659, ../sass/styles.scss */
 .social .fb-like {
   vertical-align: top;
 }
-/* line 659, ../sass/styles.scss */
+/* line 665, ../sass/styles.scss */
 .social .twitter-share-button {
   margin-top: 2px;
 }
 @media screen and (max-width: 768px) {
-  /* line 651, ../sass/styles.scss */
+  /* line 657, ../sass/styles.scss */
   .social {
     display: none;
   }
 }
 
-/* line 673, ../sass/styles.scss */
+/* line 679, ../sass/styles.scss */
 .mobile-show {
   display: none;
 }
 @media screen and (max-width: 768px) {
-  /* line 673, ../sass/styles.scss */
+  /* line 679, ../sass/styles.scss */
   .mobile-show {
     display: block;
   }
 }
 
 @media screen and (min-width: 768px) {
-  /* line 687, ../sass/styles.scss */
+  /* line 693, ../sass/styles.scss */
   .vert-center {
     position: relative;
     top: 50%;

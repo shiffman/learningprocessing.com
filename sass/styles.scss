@@ -223,7 +223,7 @@ nav {
 		ul.links-level-2 {
 
 			margin: 15px 0;
-			padding: 10px 0px 10px 30px;
+			padding: 10px 0px 10px 25px;
   			overflow: scroll;
 
   			&.scroll-borders {
@@ -588,6 +588,12 @@ header {
     	a {
 
     		display: block;
+
+    	}
+
+    	@media screen and (min-width: $break-medium) {
+
+    		display: none;
 
     	}
 
