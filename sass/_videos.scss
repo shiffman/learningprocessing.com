@@ -3,6 +3,13 @@ section#video-window {
 
 	padding-top: 100px;
 
+	@media screen and (max-width: $break-medium) {
+
+		padding: 30px 30px;
+		height: auto !important;
+
+	}
+
 	.video-actions {
 
 		margin: 15px auto;
@@ -20,6 +27,12 @@ section#video-window {
 .annotations {
 
 	padding: 100px 30px;
+
+	@media screen and (max-width: $break-medium) {
+
+		padding: 30px 30px;
+
+	}
 
 	h5 {
 

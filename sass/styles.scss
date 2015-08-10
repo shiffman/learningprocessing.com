@@ -327,10 +327,10 @@ canvas#sketch-container {
 
 	}
 
-	@media screen and (max-width: $break-small) {
+	@media screen and (max-width: $break-medium) {
 
-		width: 15px;
-		z-index: -1;
+		position: relative;
+		width: 100%;
 
 	   img {
 

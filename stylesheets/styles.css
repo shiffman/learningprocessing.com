@@ -8243,20 +8243,33 @@ h1.article-title {
 section#video-window {
   padding-top: 100px;
 }
-/* line 6, ../sass/_videos.scss */
+@media screen and (max-width: 992px) {
+  /* line 2, ../sass/_videos.scss */
+  section#video-window {
+    padding: 30px 30px;
+    height: auto !important;
+  }
+}
+/* line 13, ../sass/_videos.scss */
 section#video-window .video-actions {
   margin: 15px auto;
 }
-/* line 12, ../sass/_videos.scss */
+/* line 19, ../sass/_videos.scss */
 section#video-window .video-container {
   margin-top: 25px;
 }
 
-/* line 20, ../sass/_videos.scss */
+/* line 27, ../sass/_videos.scss */
 .annotations {
   padding: 100px 30px;
 }
-/* line 24, ../sass/_videos.scss */
+@media screen and (max-width: 992px) {
+  /* line 27, ../sass/_videos.scss */
+  .annotations {
+    padding: 30px 30px;
+  }
+}
+/* line 37, ../sass/_videos.scss */
 .annotations h5 {
   font-family: "Lato", sans-serif;
   font-size: 12px;
@@ -8264,7 +8277,7 @@ section#video-window .video-container {
   margin: 0;
   font-weight: 900;
 }
-/* line 34, ../sass/_videos.scss */
+/* line 47, ../sass/_videos.scss */
 .annotations .annotation-panel {
   padding: 10px 0px 0px;
   margin-bottom: 10px;
@@ -8272,23 +8285,23 @@ section#video-window .video-container {
   border-radius: 4px;
   display: none;
 }
-/* line 42, ../sass/_videos.scss */
+/* line 55, ../sass/_videos.scss */
 .annotations .annotation-panel span {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   color: #8C8C8C;
   font-weight: 700;
 }
-/* line 51, ../sass/_videos.scss */
+/* line 64, ../sass/_videos.scss */
 .annotations .annotation-panel p {
   font-size: 15px;
 }
-/* line 55, ../sass/_videos.scss */
+/* line 68, ../sass/_videos.scss */
 .annotations .annotation-panel.force-show {
   display: block !important;
 }
 
-/* line 67, ../sass/_videos.scss */
+/* line 80, ../sass/_videos.scss */
 .download-list a.download {
   padding: 15px;
   display: block;
@@ -8299,11 +8312,11 @@ section#video-window .video-container {
   color: #404040;
   font-size: 15px;
 }
-/* line 78, ../sass/_videos.scss */
+/* line 91, ../sass/_videos.scss */
 .download-list a.download img {
   margin-right: 15px;
 }
-/* line 84, ../sass/_videos.scss */
+/* line 97, ../sass/_videos.scss */
 .download-list a.download:hover {
   border: 1px solid #ED462F;
   text-decoration: none;
@@ -8559,11 +8572,11 @@ canvas#sketch-container {
 .rhs.canvas {
   background: #404040;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   /* line 287, ../sass/styles.scss */
   .rhs {
-    width: 15px;
-    z-index: -1;
+    position: relative;
+    width: 100%;
   }
   /* line 335, ../sass/styles.scss */
   .rhs img {
