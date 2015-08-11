@@ -3,6 +3,13 @@ section#video-window {
 
 	padding-top: 100px;
 
+	@media screen and (max-width: $break-medium) {
+
+		padding: 30px 30px;
+		height: auto !important;
+
+	}
+
 	.video-actions {
 
 		margin: 15px auto;
@@ -21,6 +28,12 @@ section#video-window {
 
 	padding: 100px 30px;
 
+	@media screen and (max-width: $break-medium) {
+
+		padding: 30px 30px;
+
+	}
+
 	h5 {
 
 		font-family: $lato;
@@ -37,6 +50,7 @@ section#video-window {
 		margin-bottom: 10px;
 		background: $white;
 		border-radius: 4px;
+		display: none;
 
 		span {
 
@@ -49,6 +63,12 @@ section#video-window {
 
 		p {
 			font-size: 15px;
+		}
+
+		&.force-show {
+
+			display: block !important;
+
 		}
 
 	}
