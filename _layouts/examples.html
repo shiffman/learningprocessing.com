@@ -1,18 +1,37 @@
 ---
 layout: default
----
+--- 
 
-<section id="content" class="col-md-8 col-md-offset-2">
+  <!--<script language="javascript" src="sketches/chapter03/exercise_3_7_absolute_value/exercise_3_7_absolute_value.js"></script>-->
 
-	<h1 class="article-title">{{ page.title }}</h1>
-	{{ content }}
+  <script language="javascript" src="/{{ page.js-files }}"></script>
 
-</section>
+  <section id="code-window" class="col-md-4 col-md-offset-2 lhs">
 
-<section class="rhs">
+    <div class="example-description">
+      <h1 class="article-title">{{ page.title }}</h1>
+      <p>
+        {{ content }}
+      </p>
+    </div>
 
-</section>
+    <div class="code-tab">
+      <input id="js-files" type="hidden" value="{{ page.js-files }}"/>
+      <input id="pde-files" type="hidden" value="{{ page.pde-files }}"/>
+    </div>
 
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
-  	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+    <div class="code-container">
+      <pre contentEditable="true">
 
+      </pre>
+    </div>
+
+  </section>
+  <section id="sketch-container" class="rhs canvas">
+
+  </section>
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  <script language="javascript" type="text/javascript" src="/javascripts/exercise.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
