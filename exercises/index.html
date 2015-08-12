@@ -1,19 +1,23 @@
 ---
 layout: default
-group: exercise
+group: exerciseIndex
 --- 
 
-  <section id="code-window" class="col-md-4 col-md-offset-2 lhs">
+ <section id="content" class="col-md-5 col-md-offset-2">
 
-    <div class="exercise-description">
-      <h1 class="article-title">Exercises</h1>
-      <p>
-        Description of exercises. What to expect!
-      </p>
-    </div>
+    <h1>EXERCISES</h1>
+    <p>Here you'll find exercises directly linked to the book. You can follow the book with this website to interact with the sketches in each page. Have fun!</p>
+    
+    <ul class="page-contents">
+        {% for post in site.posts %}
+          {% if post.group == "exercise" %}
+            <li><a class="meta-link" href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+    </ul>
 
-  </section>
+</section>
 
-  <section class="rhs">
+<section class="rhs">
 
-  </section>
+</section>

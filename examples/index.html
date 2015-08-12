@@ -1,13 +1,20 @@
 ---
 layout: default
-group: example
+group: exampleIndex
 ---
 
-<section id="content" class="col-md-8 col-md-offset-2">
+<section id="content" class="col-md-5 col-md-offset-2">
 
-	<h1 class="article-title">Examples</h1>
-	<p>Description of examples</p>
-
+	<h1>EXAMPLES</h1>
+	<p>Here you'll find a ton of examples that have been created through processing.</p>
+	
+	<ul class="page-contents">
+      {% for post in site.posts %}
+        {% if post.group == "example" %}
+          <li><a class="meta-link" href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+	</ul>
 </section>
 
 <section class="rhs">

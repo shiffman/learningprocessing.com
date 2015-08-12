@@ -73,6 +73,7 @@ a {
 		font-family: $lato;
 		font-size: $font-small;
 		font-weight: 700;
+		text-transform: uppercase;
 		display: block;
 
 	}
@@ -140,6 +141,12 @@ nav {
 	font-weight: 700;
 	display: block;
 	z-index: 2;
+
+	a.active-page {
+
+		color: $black !important;
+
+	}
 
 	@media screen and (max-width: $break-medium) {
 
@@ -236,12 +243,6 @@ nav {
 			li a {
 
 				opacity: 1;
-
-				&.active-page {
-
-					color: $black;
-
-				}
 
 			}
 
@@ -384,7 +385,9 @@ section#code-window {
 
 	@media screen and (max-width: $break-medium) {
 
-		width: 60%;
+		width: 100%;
+    	position: static;
+    	height: auto !important;
 
 	}
 

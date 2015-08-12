@@ -38,14 +38,13 @@ layout: default
           <h5>ANNOTATIONS</h5>
         </div>
         <div class="col-xs-6 text-right">
-          <a class="meta-link view-all">VIEW ALL</a>
         </div>
         <br>
       </div>
 
       <!-- Loop through -->
       {% for annotation in page.annotations %}
-        <div class="annotation-panel row" data-start="{{ annotation.start }}" data-end="{{ annotation.end }}">
+        <div class="annotation-panel row" data-start="{{ annotation.start }}" data-end="{{ annotation.end }}" data-code="{{ annotation.gitURL }}">
           <div class="col-xs-1">
             <span class="time-stamp">{{ annotation.start }}</span>
           </div>
@@ -56,9 +55,14 @@ layout: default
           </div>
         </div>
       {% endfor %}
-
       <!-- End loop -->
 
+    </div>
+
+    <div class="code-window">
+      <pre>
+        
+      </pre>
     </div>
 
     {% endif %}

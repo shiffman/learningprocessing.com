@@ -1,8 +1,8 @@
 <nav>
   <div class="left-fade"></div>
   <ul>
-    {% if page.group != "example" %}
-    <li><a href="/examples">EXAMPLES</a></li>
+    {% if page.group != "example" || page.group == "exampleIndex" %}
+    <li><a href="/examples" class="{% if page.group == 'exampleIndex' %}active-page{% endif %}">EXAMPLES</a></li>
     {% endif %}
       {% if page.group == "example" %}
             <ul class="links-level-2">
@@ -15,8 +15,8 @@
             </ul>
       {% endif %}
 
-    {% if page.group != "exercise" %}
-    <li><a href="/exercises">EXERCISES</a></li>
+    {% if page.group != "exercise" || page.group == "exerciseIndex" %}
+    <li><a href="/exercises" class="{% if page.group == 'exerciseIndex' %}active-page{% endif %}">EXERCISES</a></li>
     {% endif %}
         {% if page.group == "exercise" %}
             <ul class="links-level-2">
@@ -29,8 +29,8 @@
             </ul>
         {% endif %}
     
-    {% if page.group != "video" %}
-    <li><a href="/videos">VIDEOS</a></li>
+    {% if page.group != "video" || page.group == "videoIndex" %}
+    <li><a href="/videos" class="{% if page.group == 'videoIndex' %}active-page{% endif %}">VIDEOS</a></li>
     {% endif %}
         {% if page.group == "video" %}
             <ul class="links-level-2">
@@ -42,7 +42,7 @@
               {% endfor %}
             </ul>
         {% endif %}
-    <li><a href="/downloads">DOWNLOADS</a></li>
-    <li><a href="/resources">RESOURCES</a></li>
+    <li><a href="/downloads" class="{% if page.group == 'downloads' %}active-page{% endif %}">DOWNLOADS</a></li>
+    <li><a href="/resources" class="{% if page.group == 'resources' %}active-page{% endif %}">RESOURCES</a></li>
   </ul>
 </nav>

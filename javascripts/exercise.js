@@ -15,7 +15,7 @@ function populateCodeWindow(file) {
 
 	  	$.get('/'+file).done(function(data){
 
-			$('.code-container pre').html(data);
+			$('.code-container pre code').html(data);
 
 		});
 
@@ -24,7 +24,8 @@ function populateCodeWindow(file) {
 		var firstFile = file.split(',');
 		$.get('/'+firstFile[0]).done(function(data){
 
-			$('.code-container pre').html(data);
+			$('.code-container pre code').html(data);
+			Prism.highlightAll();
 
 		});
 
@@ -37,7 +38,7 @@ function initiateCode(file) {
 	setTimeout(function(){
 
 		$('#defaultCanvas').appendTo("#sketch-container");
-		
+		$('#defaultCanvas').fadeIn(300);
 
 	}, 1);
 

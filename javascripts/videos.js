@@ -4,9 +4,9 @@ $('document').ready(function(){
 
 });
 
-function initiateAnnotation() {
+var video = Popcorn.vimeo('.video-container', $('#video-url').val());
 
-	var video = Popcorn.vimeo('.video-container', $('#video-url').val());
+function initiateAnnotation() {
 
 	$('.annotation-panel').each(function(index, value){
 
@@ -24,18 +24,49 @@ function initiateAnnotation() {
 
 function revealAnnotation(target) {
 
-	$(target).fadeIn(200);
+	$(target).addClass('in');
 
 }
 
 function hideAnnotation(target) {
 
-	$(target).fadeOut(200);
+	$(target).removeClass('in');
 
 }
 
 $('.view-all').click(function() {
 
 	$('.annotation-panel').toggleClass('force-show');
+
+});
+
+$('.annotation-panel').click(function(){
+
+	var cueTime = $(this).attr('data-start');
+	video.currentTime(cueTime);
+
+});
+
+$('.annotation-panel a').click(function(e){	
+
+	e.preventDefault();
+
+	var container 	= $(this).closest('.annotation-panel');
+		url 		= container.attr('data-code');
+
+	if( url != "" || url != undefined ) {
+
+		$.get(url).done(function(data) {
+
+			$('.code-window pre').html(data);
+			$('.code-window').slideDown(300);
+
+		});
+
+	} else {
+
+		window.location = url;
+
+	}
 
 });

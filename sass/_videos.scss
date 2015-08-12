@@ -26,7 +26,7 @@ section#video-window {
 
 .annotations {
 
-	padding: 100px 30px;
+	padding: 100px 30px 15px 30px;
 
 	@media screen and (max-width: $break-medium) {
 
@@ -46,11 +46,12 @@ section#video-window {
 
 	.annotation-panel {
 
+		transition: opacity 0.4s;
 		padding: 10px 0px 0px;
 		margin-bottom: 10px;
 		background: $white;
 		border-radius: 4px;
-		display: none;
+		opacity: 0.6;
 
 		span {
 
@@ -65,9 +66,9 @@ section#video-window {
 			font-size: 15px;
 		}
 
-		&.force-show {
+		&:hover, &.in {
 
-			display: block !important;
+			opacity: 1;
 
 		}
 
@@ -75,9 +76,26 @@ section#video-window {
 
 }
 
-.download-list {
+.rhs {
 
-	a.download {
+	.code-window {
+
+		display: none;
+		padding: 15px;
+
+		pre {
+
+			padding: 15px;
+			background: $white;
+			border-color: $yellow;
+		
+		}
+
+	}
+
+}
+
+a.download {
 
 		padding: 15px;
 		display: block;
@@ -106,5 +124,4 @@ section#video-window {
 
 	}
 
-}
 
