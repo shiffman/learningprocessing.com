@@ -1,4 +1,4 @@
-<nav>
+<nav class="{% if page.group == 'example' || page.group == 'video' || page.group == 'exercise' %}level-2{% endif %}">
   <div class="left-fade"></div>
   <ul>
     {% if page.group != "example" || page.group == "exampleIndex" %}

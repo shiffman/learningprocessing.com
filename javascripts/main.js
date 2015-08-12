@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-	var height = $(window).height();
-	$('.lhs').css({'height': height});
+	setDimensions();
 
 	if($('.secondary-link').length != 0) {
 
@@ -43,3 +42,10 @@ $(window).on('scroll', function() {
 });
 
 // Close mobile nav off click
+
+function setDimensions() {
+
+	var height = $(window).height();
+	$('.lhs').css({'height': height});
+
+}

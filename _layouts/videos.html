@@ -1,10 +1,11 @@
 ---
 layout: default
 ---
+  <link href="/stylesheets/prism.css" rel="stylesheet">
 
   <section id="video-window" class="col-md-5 col-md-offset-2 lhs">
 
-    <span class="reference-label"></span>
+    <span class="reference-label">{{ page.chapter }}</span>
     <h1 class="article-title">{{ page.title }}</h1>
     {{ content }}
 
@@ -60,16 +61,14 @@ layout: default
     </div>
 
     <div class="code-window">
-      <pre>
-        
-      </pre>
+      <pre><code contenteditable="true" class="simplebox language-java"></code></pre>
     </div>
 
     {% endif %}
 
   </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="/javascripts/jquery.fitvids.js"></script>
     <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/javascripts/prism.js"></script>
     <script language="javascript" type="text/javascript" src="/javascripts/videos.js"></script>

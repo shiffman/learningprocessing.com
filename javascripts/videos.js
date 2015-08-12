@@ -58,7 +58,8 @@ $('.annotation-panel a').click(function(e){
 
 		$.get(url).done(function(data) {
 
-			$('.code-window pre').html(data);
+			$('.code-window pre code').html(data);
+			Prism.highlightAll();
 			$('.code-window').slideDown(300);
 
 		});

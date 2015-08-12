@@ -1,74 +1,23 @@
 ---
 layout: default
-group: video
+group: videoIndex
 ---
 
-  <section id="video-window" class="col-md-5 col-md-offset-2">
+<section id="content" class="col-md-5 col-md-offset-2">
 
-    <span class="reference-label"></span>
-    <h1 class="article-title">Videos</h1>
-    <p>Little introduction about the videos. Little introduction about the videos. Little introduction about the videos. Little introduction about the videos. Little introduction about the videos. Little introduction about the videos. Little introduction about the videos. Little introduction about the videos.</p>
+    <h1>VIDEOS</h1>
+    <p>Click through the video series to learn programming from beginner to advanced levels.</p>
+    
+    <ul class="page-contents">
+        {% for post in site.posts %}
+          {% if post.group == "video" %}
+            <li><a class="meta-link" href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+    </ul>
 
-    <!-- <div class="video-container">
-      <iframe src="https://player.vimeo.com/video/71113840?color=336699&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-    <div class="video-actions">
-      <div class="row">
-        <div class="col-xs-6">
-          <a class="meta-link">DOWNLOAD CODE</a>
-        </div>
-        <div class="col-xs-6 text-right">
-          <a class="meta-link">FULLSCREEN</a>
-        </div>
-      </div>
-    </div> -->
+</section>
 
-  </section>
+<section class="rhs">
 
-  <section class="rhs">
-
-    <!-- <div class="annotations">
-
-      <div class="row">
-        <div class="col-xs-6">
-          <h5>ANNOTATIONS</h5>
-        </div>
-        <div class="col-xs-6 text-right">
-          <a class="meta-link">VIEW ALL</a>
-        </div>
-        <br>
-      </div>
-
-      <div class="annotation-panel row">
-        <div class="col-xs-1">
-          <span>02:20</span>
-        </div>
-        <div class="col-xs-11">
-          <p>View O’Reilly Media's <a>History of Programming
-        Languages</a> poster.</p>
-        </div>
-      </div>
-
-      <div class="annotation-panel row">
-        <div class="col-xs-1">
-          <span>02:20</span>
-        </div>
-        <div class="col-xs-11">
-          <p>View O’Reilly Media's <a>History of Programming
-        Languages</a> poster.</p>
-        </div>
-      </div>
-
-      <div class="annotation-panel row">
-        <div class="col-xs-1">
-          <span>02:20</span>
-        </div>
-        <div class="col-xs-11">
-          <p>View O’Reilly Media's <a>History of Programming
-        Languages</a> poster.</p>
-        </div>
-      </div>
-
-    </div> -->
-
-  </section>
+</section>

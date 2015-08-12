@@ -40,7 +40,7 @@ function initiateCode(file) {
 		$('#defaultCanvas').appendTo("#sketch-container");
 		$('#defaultCanvas').fadeIn(300);
 
-	}, 1);
+	}, 50);
 
 }
 

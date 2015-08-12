@@ -24,13 +24,23 @@ h1.article-title {
 .page-contents {
 
 	margin: 30px 0;
-	border-left: 4px solid $grey;
-	padding-left: 15px;
+	padding: 0;
 
 	li {
 
 		padding: 2px 0;
 		list-style-type: none;
+
+		a {
+			border-left: 3px solid $grey;
+			padding-left: 15px;
+			&:hover {
+				border-left: 3px solid $orange;
+				text-decoration: none;
+
+			}
+
+		}
 
 	}
 
