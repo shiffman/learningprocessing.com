@@ -2,6 +2,12 @@ $(document).ready(function(){
 
 	setDimensions();
 
+	$('window').resize(function(){
+
+		setDimensions();
+
+	});
+
 	if($('.secondary-link').length != 0) {
 
 		$('nav').addClass('level-2');
@@ -46,6 +52,6 @@ $(window).on('scroll', function() {
 function setDimensions() {
 
 	var height = $(window).height();
-	$('.lhs').css({'height': height});
+	$('.lhs').css({'height': '100%', 'min-height': height});
 
 }
