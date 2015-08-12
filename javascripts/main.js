@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var height = ($(window).height()) - 60;
+	var height = $(window).height();
 	$('.lhs').css({'height': height});
 
 	if($('.secondary-link').length != 0) {

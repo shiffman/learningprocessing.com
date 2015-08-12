@@ -403,7 +403,7 @@ section#code-window {
 		a {
 
 			display: inline-block;
-			padding: 0 30px;
+			padding: 0 15px;
 			line-height: 50px;
 			color: $white;
 			font-family: $lato;
@@ -418,7 +418,7 @@ section#code-window {
 	.code-container {
 
 		overflow: scroll;
-		height: 100%;
+		padding: 30px;
 
 		pre {
 

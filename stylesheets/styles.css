@@ -8204,11 +8204,11 @@ button.close {
   }
 }
 /* line 1, ../sass/_exercises.scss */
-.exercise-description {
+.exercise-description, .example-description {
   padding: 25px 30px 30px 30px;
 }
 /* line 5, ../sass/_exercises.scss */
-.exercise-description p {
+.exercise-description p, .example-description p {
   margin-top: 25px;
 }
 
@@ -8637,7 +8637,7 @@ section#code-window .code-tab {
 /* line 403, ../sass/styles.scss */
 section#code-window .code-tab a {
   display: inline-block;
-  padding: 0 30px;
+  padding: 0 15px;
   line-height: 50px;
   color: #ffffff;
   font-family: "Lato", sans-serif;
@@ -8648,7 +8648,7 @@ section#code-window .code-tab a {
 /* line 418, ../sass/styles.scss */
 section#code-window .code-container {
   overflow: scroll;
-  height: 100%;
+  padding: 30px;
 }
 /* line 423, ../sass/styles.scss */
 section#code-window .code-container pre {
