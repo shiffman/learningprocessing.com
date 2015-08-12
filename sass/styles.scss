@@ -316,10 +316,13 @@ canvas#sketch-container {
 		text-align: right;
 		font-family: $lato;
 		font-size: $font-small;
-		color: #ffa500 !important;
+		color: #7B7B7B !important;
 		font-weight: 700;
 		z-index: 1;
 
+		a {
+			color: #7B7B7B !important;
+		}
 		.extra-small {
 
 			font-size: 10px;
