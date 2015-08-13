@@ -133,7 +133,7 @@ a {
 nav {
 
 	position: fixed;
-	top: 124px;
+	top: 125px;
 	left: 0px;
 	width: 240px;
 	font-family: $lato;
@@ -343,6 +343,7 @@ canvas#sketch-container {
 
 		background: $black;
 		border-left: 3px solid #404040;
+		z-index: 3;
 
 	}
 
@@ -393,6 +394,7 @@ section#content {
 
 section#code-window {
 
+	background: $white;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -401,6 +403,7 @@ section#code-window {
 	border-left: 2px solid #f1f1f1;
 	padding: 0;
 	overflow: scroll;
+	z-index: 2;
 
 	@media screen and (max-width: $break-medium) {
 
@@ -439,7 +442,7 @@ section#code-window {
 	.code-container {
 
 		overflow: scroll;
-		padding: 30px;
+		padding: 15px;
 
 		pre {
 

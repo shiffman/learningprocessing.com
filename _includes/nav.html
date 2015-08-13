@@ -9,7 +9,7 @@
               <li><a class="active-page" href="/examples">EXAMPLES</a></li>
               {% for post in site.posts %}
                 {% if post.group == "example" %}
-                  <li><a class="secondary-link" href="{{ post.url }}">{{ post.title }}</a></li>
+                  <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
                 {% endif %}
               {% endfor %}
             </ul>
@@ -23,7 +23,7 @@
               <li><a class="active-page" href="/exercises">EXERCISES</a></li>
               {% for post in site.posts %}
                 {% if post.group == "exercise" %}
-                  <li><a class="secondary-link" href="{{ post.url }}">{{ post.title }}</a></li>
+                  <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
                 {% endif %}
               {% endfor %}
             </ul>
@@ -37,7 +37,7 @@
               <li><a class="active-page" href="/videos">VIDEOS</a></li>
                {% for post in site.posts %}
                   {% if post.group == "video" %}
-                    <li><a class="secondary-link" href="{{ post.url }}">{{ post.title }}</a></li>
+                    <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
                   {% endif %}
               {% endfor %}
             </ul>

@@ -7,7 +7,7 @@ layout: default
   <section id="code-window" class="col-md-4 col-md-offset-2 lhs">
 
     <div class="example-description">
-      <span class="reference-label">{{ page.chapter }}</span>
+      <span class="reference-label">{{ page.chapter }}.{{ page.number }}</span>
       <h1 class="article-title">{{ page.title }}</h1>
       <p>
         {{ content }}
@@ -25,7 +25,7 @@ layout: default
 
   </section>
   <section id="sketch-container" class="rhs canvas text-center">
-    <span class="background-explainer"><a href="http://p5js.org/" target="_blank">SKETCH RUNNING VIA P5.JS</a><br><a href="{{ page.js-files }}" class="extra-small" target="_blank">JS CODE</a> / <a href="{{ page.pde-files }}" class="extra-small" target="_blank">PDE CODE</a> ON GITHUB</span>
+    <span class="background-explainer"><a href="http://p5js.org/" target="_blank">SKETCH RUNNING VIA P5.JS</a><br><a href="{{ page.js-files }}" class="extra-small" target="_blank">JS CODE</a> / <a href="{{ page.pde-files }}" class="extra-small" target="_blank">PDE CODE</a> <span class="extra-small">ON GITHUB</span></span>
   </section>
 
   <script language="javascript" type="text/javascript" src="/javascripts/prism.js"></script>

@@ -5,7 +5,7 @@ $('document').ready(function(){
 
 	if($('nav').height() > windowHeight) {
 
-		$('.links-level-2').css({'max-height': windowHeight - 320}).addClass('scroll-borders');
+		$('.links-level-2').css({'max-height': windowHeight - 350}).addClass('scroll-borders');
 		
 	}
 

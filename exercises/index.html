@@ -11,7 +11,7 @@ group: exerciseIndex
     <ul class="page-contents">
         {% for post in site.posts %}
           {% if post.group == "exercise" %}
-            <li><a class="meta-link" href="{{ post.url }}">{{ post.title }}</a></li>
+            <li><a class="meta-link" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
           {% endif %}
         {% endfor %}
     </ul>
