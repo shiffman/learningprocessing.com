@@ -8251,17 +8251,16 @@ h1.article-title {
 }
 /* line 38, ../sass/_article.scss */
 .page-contents li {
-  padding: 2px 0;
   list-style-type: none;
 }
-/* line 43, ../sass/_article.scss */
+/* line 42, ../sass/_article.scss */
 .page-contents li a {
-  border-left: 3px solid #f1f1f1;
-  padding-left: 15px;
+  border-left: 2px solid #f1f1f1;
+  padding: 2px 15px;
 }
-/* line 46, ../sass/_article.scss */
+/* line 45, ../sass/_article.scss */
 .page-contents li a:hover {
-  border-left: 3px solid #ED462F;
+  border-left: 2px solid #ED462F;
   text-decoration: none;
 }
 
