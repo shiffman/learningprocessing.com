@@ -35,14 +35,19 @@ function populateCodeWindow(file) {
 
 }
 
+window.onload = function() {
+  $('#defaultCanvas').appendTo("#sketch-container");
+	$('#defaultCanvas').fadeIn(300);
+};
+
 function initiateCode(file) {
 
-	setTimeout(function(){
+	// setTimeout(function(){
 
-		$('#defaultCanvas').appendTo("#sketch-container");
-		$('#defaultCanvas').fadeIn(300);
+	// 	$('#defaultCanvas').appendTo("#sketch-container");
+	// 	$('#defaultCanvas').fadeIn(300);
 
-	}, 50);
+	// }, 50);
 
 }
 
