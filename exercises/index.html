@@ -9,9 +9,18 @@ group: exerciseIndex
     <p>Here you'll find exercises directly linked to the book. You can follow the book with this website to interact with the sketches in each page. Have fun!</p>
     
     <ul class="page-contents">
-        {% for post in site.posts %}
+    	{% assign previousChapter = 1 %}
+
+        {% for post in site.posts reversed %}
           {% if post.group == "exercise" %}
-            <li><a class="meta-link" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+
+          	{% if previousChapter == post.chapter %}
+              <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+            {% else %}
+              <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+              {% assign previousChapter = post.chapter %}
+            {% endif %}
+
           {% endif %}
         {% endfor %}
     </ul>

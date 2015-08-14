@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <title>{{ post.title }} | {{ page.title }} | Learning Processing 2nd Edition</title>
+    <title>Learning Processing 2nd Edition</title>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -19,12 +19,13 @@
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script language="javascript" type="text/javascript" src="/javascripts/p5/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="javascripts/p5/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="javascripts/sketches/flock.js"></script>
 
-    <link href="/stylesheets/styles.css" rel="stylesheet">
+    <link href="stylesheets/landing.css" rel="stylesheet">
     <link rel="canonical" href="https://dev.twitter.com/web/tweet-button">
 
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,7 +35,16 @@
 
   </head>
   <body>
-  
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4&appId=205618992840571";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
   <header>
 
     <div class="stamp">

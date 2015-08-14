@@ -9,9 +9,18 @@ group: videoIndex
     <p>Click through the video series to learn programming from beginner to advanced levels.</p>
     
     <ul class="page-contents">
+    	{% assign previousChapter = 1 %}
+    	
         {% for post in site.posts %}
           {% if post.group == "video" %}
-            <li><a class="meta-link" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+            
+            {% if previousChapter == post.chapter %}
+              <li><a class="meta-link" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+	        {% else %}
+	          <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+	          {% assign previousChapter = post.chapter %}
+	        {% endif %}
+
           {% endif %}
         {% endfor %}
     </ul>

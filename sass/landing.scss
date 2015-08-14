@@ -1,6 +1,7 @@
 @import "bootstrap-compass";
 @import "bootstrap-variables";
 @import "bootstrap";
+@import "variables";
 
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Alice);
@@ -136,6 +137,163 @@ a {
 
 }
 
+nav {
+
+	position: fixed;
+	top: 125px;
+	left: 0px;
+	width: 240px;
+	font-family: $lato;
+	font-size: $font-small;
+	font-weight: 700;
+	display: block;
+	z-index: 2;
+
+	a.active-page {
+
+		color: $black !important;
+
+	}
+
+	a.nav-cta {
+
+		position: fixed;
+		left: 30px;
+		bottom: 30px;
+		width: 135px;
+		padding: 10px 10px;
+		margin-top: 30px;
+		opacity: 0.7;
+		color: $white !important;
+
+	}
+
+	@media screen and (max-width: $break-medium) {
+
+		transition: left 0.5s;
+	    background-color: #ffffff;
+	    height: 100%;
+	    padding: 30px;
+	    top: 0;
+	    width: 300px;
+	    left: -300px;
+	    overflow: scroll;
+	    z-index: 9999;
+
+	    &.level-2 {
+
+	    	ul {
+
+				padding-left: 0px !important;
+
+				li a {
+
+					opacity: 1 !important;
+
+				}
+
+			}
+
+	    }
+
+	    &.open {
+
+	    	left: 0;
+
+	    }
+
+	}
+
+	.left-fade {
+
+		position: fixed;
+		left: 0;
+		width: 30px;
+		height: 100%;
+		background: url('../images/left-fade.png') repeat-y;
+		z-index: 10;
+
+		@media screen and (max-width: $break-medium) {
+			display: none;
+		}
+
+	}
+
+	ul {
+
+		padding-left: 30px;
+		
+		li {
+
+			list-style-type: none;
+			padding: 2px 0;
+
+		}
+
+	}
+
+	&.level-2 {
+
+		ul {
+
+			transition: padding 0.3s;
+			padding-left: 5px;
+
+			li a {
+				transition: opacity 0.3s;
+				opacity: 0.3;
+
+			}
+
+		}
+
+		ul.links-level-2 {
+
+			margin: 15px 0;
+			padding: 10px 0px 10px 25px;
+  			overflow: scroll;
+
+  			&.scroll-borders {
+
+  				border-top: 2px solid #F1F1E2;
+  				border-bottom: 2px solid #F1F1E2;
+  				
+  			}
+
+			li a {
+
+				opacity: 1;
+
+			}
+
+		}
+
+		&.in {
+
+			ul {
+
+				padding-left: 30px;
+
+				li a {
+
+					opacity: 1;
+
+				}
+
+			}
+
+			ul.links-level-2 {
+
+				padding-left: 0;
+
+			}
+
+		}
+
+	}
+
+}
+
 // Landing Page
 
 canvas#sketch-container {
@@ -153,8 +311,6 @@ section#hero {
 
 	height: 100%;
 	position: relative;
-	padding-right: 0;
-	// padding: 30px 30px 0 30px;
 
 	.lhs {
 
@@ -287,31 +443,78 @@ section#hero {
 
 }
 
+header {
+
+	width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 110px;
+    z-index: 9990;
+    
+    .mobile-nav-button {
+
+    	position: absolute;
+    	right: 30px;
+    	top: 30px;
+
+    	a {
+
+    		display: block;
+
+    	}
+
+    	@media screen and (min-width: $break-medium) {
+
+    		display: none;
+
+    	}
+
+    }
+
+}
+
 .stamp {
 
 	position: fixed;
 	top: 30px;
-	left: 30px;
+	left: 25px;
 	transition: opacity 0.4s;
 	opacity: 1;
+	z-index: 1;
 
 	a {
 
+		transition: border 0.4s;
 		font-family: $lato;
 		font-size: $font-small;
 		font-weight: 700;
 		display: block;
+		padding-left: 5px;
+		border-left: 2px solid $white;
 
 		&.active {
 
 			color: $black;
-			pointer-events: none;
+
+		}
+
+		&:hover{
+
+			border-left: 2px solid $orange;
+			text-decoration: none;
 
 		}
 
 	}
 
-	@media screen and (max-width: $break-small) {
+	img {
+
+		margin-left: 7px;
+
+	}
+
+	@media screen and (max-width: $break-medium) {
 
 		&.scroll-hide {
 

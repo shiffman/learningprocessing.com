@@ -48,7 +48,7 @@ window.onload = function() {
 
 	} else {
 
-  		canvas.appendTo("#sketch-container").fadeIn(300);
+  		$(canvas).appendTo("#sketch-container").fadeIn(300);
 		
 	}
 

@@ -1,3 +1,5 @@
+{% assign previousChapter = 1 %}
+
 <nav class="{% if page.group == 'example' || page.group == 'video' || page.group == 'exercise' %}level-2{% endif %}">
   <div class="left-fade"></div>
   <ul>
@@ -7,9 +9,16 @@
       {% if page.group == "example" %}
             <ul class="links-level-2">
               <li><a class="active-page" href="/examples">EXAMPLES</a></li>
-              {% for post in site.posts %}
+              {% for post in site.posts reversed %}
                 {% if post.group == "example" %}
-                  <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+
+                    {% if previousChapter == post.chapter %}
+                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                    {% else %}
+                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      {% assign previousChapter = post.chapter %}
+                    {% endif %}
+
                 {% endif %}
               {% endfor %}
             </ul>
@@ -21,9 +30,16 @@
         {% if page.group == "exercise" %}
             <ul class="links-level-2">
               <li><a class="active-page" href="/exercises">EXERCISES</a></li>
-              {% for post in site.posts %}
+              {% for post in site.posts reversed %}
                 {% if post.group == "exercise" %}
-                  <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                    
+                     {% if previousChapter == post.chapter %}
+                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                    {% else %}
+                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      {% assign previousChapter = post.chapter %}
+                    {% endif %}
+
                 {% endif %}
               {% endfor %}
             </ul>
@@ -35,9 +51,16 @@
         {% if page.group == "video" %}
             <ul class="links-level-2">
               <li><a class="active-page" href="/videos">VIDEOS</a></li>
-               {% for post in site.posts %}
+               {% for post in site.posts reversed %}
                   {% if post.group == "video" %}
-                    <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      
+                    {% if previousChapter == post.chapter %}
+                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                    {% else %}
+                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      {% assign previousChapter = post.chapter %}
+                    {% endif %}
+
                   {% endif %}
               {% endfor %}
             </ul>
