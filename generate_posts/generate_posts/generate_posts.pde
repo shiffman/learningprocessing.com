@@ -24,8 +24,8 @@ void setup() {
     int a = name.indexOf("_");
     int b = name.indexOf("_", a+1);
     int c = name.indexOf("_", b+1);
-    int chapter = int(name.substring(a+1, b));
-    int number = int(name.substring(b+1, c));
+    String chapter = name.substring(a+1, b);
+    String number = name.substring(b+1, c);
     name = name.replaceAll("_","-");
     PrintWriter output = createWriter("examples/2015-08-13-"+name+".html");
     
@@ -39,8 +39,8 @@ void setup() {
     output.println("title: " + title);
     output.println("chapter: " + chapter);
     output.println("number: " + number);
-    output.println("js-files: https://cdn.rawgit.com/shiffman/LearningProcessing-p5.js/master/chp01_drawing/example_1_1_stroke_fill/sketch.js");
-    output.println("pde-files: https://raw.githubusercontent.com/shiffman/LearningProcessing/master/chp01_drawing/example_1_1_stroke_fill/example_1_1_stroke_fill.pde");
+    output.println("js-files: https://cdn.rawgit.com/shiffman/LearningProcessing-p5.js/master/chp01_drawing/example_01_01_stroke_fill/sketch.js");
+    output.println("pde-files: https://raw.githubusercontent.com/shiffman/LearningProcessing/master/chp01_drawing/example_01_01_stroke_fill/example_01_01_stroke_fill.pde");
     output.println("group: example");
     output.println("---");
     output.flush();
