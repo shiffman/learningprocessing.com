@@ -8495,7 +8495,7 @@ nav {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   font-weight: 700;
-  display: block;
+  display: none;
   z-index: 2;
 }
 /* line 155, ../sass/styles.scss */
