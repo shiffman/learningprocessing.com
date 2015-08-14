@@ -3,9 +3,8 @@ $('document').ready(function(){
 	var JSfile 	= $('#js-files').val();
 	var PDEfile = $('#pde-files').val();
 
-		populateCodeWindow(PDEfile);
-		createCodeNav(PDEfile);
-		initiateCode(JSfile);
+	populateCodeWindow(PDEfile);
+	createCodeNav(PDEfile);
 
 });
 
@@ -36,20 +35,26 @@ function populateCodeWindow(file) {
 }
 
 window.onload = function() {
-  $('#defaultCanvas').appendTo("#sketch-container");
-	$('#defaultCanvas').fadeIn(300);
+
+  	var canvas = document.getElementById('defaultCanvas');
+
+  	console.log(canvas);
+	if( canvas == null ) {
+
+		// NO SKETCH AVAILABLE
+		$('#sketch-container').append('<div id="defaultCanvas" style="display: block"><h4>NO SKETCH AVAILABLE</h4></div>');
+		$('.background-explainer').hide();
+		
+
+	} else {
+
+  		canvas.appendTo("#sketch-container").fadeIn(300);
+		
+	}
+
+
+	
 };
-
-function initiateCode(file) {
-
-	// setTimeout(function(){
-
-	// 	$('#defaultCanvas').appendTo("#sketch-container");
-	// 	$('#defaultCanvas').fadeIn(300);
-
-	// }, 50);
-
-}
 
 function createCodeNav(PDE) {
 
@@ -59,8 +64,10 @@ function createCodeNav(PDE) {
 
 		for(i = 0; i < array.length; i++) {
 			
-			var link = array[i].substr(array[i].lastIndexOf('/') + 1);
-				link = link.replace('example_','');
+			var link = array[i].substr(array[i].lastIndexOf('/') + 1); // Get string after last hash
+				link = link.replace('example_',''); // Remove Example 
+				link = link.replace(/_/g, ' '); // Remove Underscores
+				link = link.substring(5); // Remove Chapter Number
 
 			$('.code-tab').append('<a href="'+array[i]+'" class="code-tab-link">'+link+'</a>');
 
@@ -70,6 +77,8 @@ function createCodeNav(PDE) {
 
 		var link = PDE.substr(PDE.lastIndexOf('/') + 1);
 			link = link.replace('example_','');
+			link = link.replace(/_/g, ' ');
+			link = link.substring(5);
 
 		$('.code-tab').append('<a href="'+PDE+'" class="code-tab-link">'+link+'</a>');
 

@@ -10,9 +10,8 @@ layout: default
     {{ content }}
 
     <input id="video-url" type="hidden" value="{{ page.video }}">
-    <div id="video" class="video-container" style="height: 50%">
-        
-    </div>
+    <div id="video" class="video-container" style="height: 300px"></div>
+
     <div class="video-actions">
       <div class="row">
         <div class="col-xs-6">
@@ -28,7 +27,7 @@ layout: default
 
   </section>
 
-  <section class="rhs">
+  <section class="rhs annotation-window">
 
     {% if page.annotations != 'none' %}
 

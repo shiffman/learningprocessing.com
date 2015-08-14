@@ -58,6 +58,16 @@ h3 {
 
 }
 
+h4 {
+
+	font-family: $lato;
+	font-size: $font-small;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: block;
+
+}
+
 a {
 
 	color: $orange;
@@ -435,6 +445,13 @@ section#code-window {
 			font-weight: 700;
 			display: inline-block;
 
+			&:hover {
+
+				text-decoration: none;
+				background: rgba(0,0,0,0.05);
+
+			}
+
 		}
 
 	}
@@ -601,7 +618,7 @@ header {
     left: 0;
     top: 0;
     height: 110px;
-    z-index: 9998;
+    z-index: 9990;
     
     .mobile-nav-button {
 
@@ -647,7 +664,6 @@ header {
 		&.active {
 
 			color: $black;
-			pointer-events: none;
 
 		}
 

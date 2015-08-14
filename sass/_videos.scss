@@ -1,4 +1,3 @@
-
 section#video-window {
 
 	padding-top: 29px;
@@ -19,6 +18,12 @@ section#video-window {
 	.video-container {
 
 		margin-top: 25px;
+
+		@media screen and (max-width: $break-small) {
+
+			height: auto !important;
+
+		}
 
 	}
 
@@ -76,7 +81,9 @@ section#video-window {
 
 }
 
-.rhs {
+.rhs.annotation-window {
+
+	z-index: 9992;
 
 	.code-window {
 

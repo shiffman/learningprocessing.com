@@ -3,9 +3,8 @@ $('document').ready(function(){
 	var JSfile 	= $('#js-files').val();
 	var PDEfile = $('#pde-files').val();
 
-		initiateCode(JSfile);
-		populateCodeWindow(PDEfile);
-		createCodeNav(PDEfile);
+	populateCodeWindow(PDEfile);
+	createCodeNav(PDEfile);
 
 });
 
@@ -33,16 +32,19 @@ function populateCodeWindow(file) {
 	
 }
 
-function initiateCode(file) {
+window.onload = function() {
 
-	setTimeout(function(){
+	var canvas = $('#defaultCanvas');
 
-		$('#defaultCanvas').appendTo("#sketch-container");
-		$('#defaultCanvas').fadeIn(300);
+  	canvas.appendTo("#sketch-container").fadeIn(300);
 
-	}, 50);
+	if( canvas == null ) {
 
-}
+		console.log('No Sketch');
+
+	}
+	
+};
 
 function createCodeNav(PDE) {
 
@@ -53,7 +55,7 @@ function createCodeNav(PDE) {
 		for(i = 0; i < array.length; i++) {
 			
 			var link = array[i].substr(array[i].lastIndexOf('/') + 1);
-				link = link.replace('exercise_','');
+				link = link.replace('exercise_','').replace('_', ' ');
 
 			$('.code-tab').append('<a href="'+array[i]+'" class="code-tab-link">'+link+'</a>');
 

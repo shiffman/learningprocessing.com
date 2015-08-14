@@ -11,12 +11,11 @@ group: resources
     In addition to the Vimeo embeds on this site, <a href="http://youtube.com/shiffman">all lesson videos are available on youtube</a>.
   </p>
   <br>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/2VLaIr5Ckbs" frameborder="0" allowfullscreen></iframe>
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2VLaIr5Ckbs" frameborder="0" allowfullscreen></iframe>
+  </div>
   <br><br>
-  <h3>
-    Other helpful resources
-  </h3>
-  <br>
+  <h4>Other helpful resources</h4>
   <div class="link-list">
     <a href="http://www.processing.org/" class="download" target="_blank">Official Processing Web Site</a>
     <a href="http://forum.processing.org/" class="download" target="_blank">Processing Forum</a>
@@ -28,10 +27,9 @@ group: resources
     <a href="http://vimeo.com/channels/debugging" class="download" target="_blank">A Brief Introduction to Debugging: Video Series</a> 
   </div>
   <br>
-  <h3>
+  <h4>
     Other books
-  </h3>
-  <br>
+  </h4>
   <div class="book-list">
     <a href="http://amzn.to/1huqiHQ" class="download" target="_blank">Processing: A Programming Handbook for Visual Designers and Artists by Casey Reas, Ben Fry</a>
     <a href="http://amzn.to/1f4HZff" class="download" target="_blank">Make: Getting Started with Processing by Casey Reas, Ben Fry</a>
@@ -42,5 +40,10 @@ group: resources
 </section>
 
 <section class="rhs">
-
+  
 </section>
+
+<script language="javascript" type="text/javascript" src="/javascripts/jquery.fitvids.js"></script>
+<script>
+  $('.video-container').fitVids();
+</script>

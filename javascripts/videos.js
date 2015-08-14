@@ -5,6 +5,12 @@ $('document').ready(function(){
 });
 
 var video = Popcorn.vimeo('.video-container', $('#video-url').val());
+	video.on('loadeddata', function(){
+
+		// Fit Vids makes videos responsive among devices
+		$('.video-container').fitVids();
+
+	});
 
 function initiateAnnotation() {
 
