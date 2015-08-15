@@ -1,4 +1,5 @@
- //<>//
+String what = "exercise"; //<>//
+
 String[] chapters = {
   "chp01_drawing", 
   "chp02_processing", 
@@ -35,8 +36,8 @@ void setup() {
       File[] subfiles = listFiles(files[i].getAbsolutePath());
       for (int j = 0; j < subfiles.length; j++) {
         if (subfiles[j].getName().length() > 8) {
-          String n = subfiles[j].getName().substring(0, 7); 
-          if (n.equals("example")) {
+          String n = subfiles[j].getName().substring(0, what.length()); 
+          if (n.equals(what)) {
             todo.add(subfiles[j]);
           }
         }
@@ -46,6 +47,7 @@ void setup() {
 
   for (File f : todo) {
     String name = f.getName();
+    println(name);
     String originalname = name;
     //println("Processing: " + name);
     int a = name.indexOf("_");
@@ -54,15 +56,15 @@ void setup() {
     String chapter = name.substring(a+1, b);
     String number = name.substring(b+1, c);
     name = name.replaceAll("_", "-");
-    PrintWriter output = createWriter("examples/2015-08-15-"+name+".html");
+    PrintWriter output = createWriter(what+"s/2015-08-15-"+name+".html");
 
     String title = name.substring(c+1, name.length());
     title = title.replaceAll("_", " ");
     title = title.replaceAll("-", " ");
 
     output.println("---");
-    output.println("layout: examples");
-    output.println("permalink: /examples/chp" + chapter +"/" + name);
+    output.println("layout: "+what+"s");
+    output.println("permalink: /" + what + "s/chp" + chapter +"/" + name);
     output.println("title: " + title);
     output.println("chapter: " + chapter);
     output.println("number: " + number);
