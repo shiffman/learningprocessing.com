@@ -54,7 +54,7 @@ void setup() {
     String chapter = name.substring(a+1, b);
     String number = name.substring(b+1, c);
     name = name.replaceAll("_", "-");
-    PrintWriter output = createWriter("examples/2015-08-13-"+name+".html");
+    PrintWriter output = createWriter("examples/2015-08-15-"+name+".html");
 
     String title = name.substring(c+1, name.length());
     title = title.replaceAll("_", " ");
@@ -70,7 +70,7 @@ void setup() {
     String cdn = "https://cdn.rawgit.com/shiffman/LearningProcessing-p5.js/master/";
     String chpname = chapters[int(chapter)-1]; 
     
-    String raw = "https://raw.githubusercontent.com/shiffman/LearningProcessing/master/";
+    String raw = "https://cdn.rawgit.com/shiffman/LearningProcessing/master/";
     output.println("js-files: " + cdn + chpname + "/" + originalname + "/sketch.js");
     output.println("pde-files: " + raw + chpname + "/" + originalname + "/" + originalname + ".pde");
     output.println("group: example");
