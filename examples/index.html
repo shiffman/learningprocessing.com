@@ -6,7 +6,7 @@ group: exampleIndex
 <section id="content" class="col-md-5 col-md-offset-2 padding">
 
 	<h1>EXAMPLES</h1>
-	<p>Here you'll find a ton of examples that have been created through processing.</p>
+	<p>Here are all the examples from Learning Processing organized by chapter.</p>
 	
 	<ul class="page-contents">
 	{% assign previousChapter = 1 %}
@@ -15,9 +15,9 @@ group: exampleIndex
         {% if post.group == "example" %}
 
           	{% if previousChapter == post.chapter %}
-              <li><a class="meta-link" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+              <li><a class="meta-link" href="{{ post.url }}">{{ post.chapter }}-{{ post.number }} {{ post.title }}</a></li>
 	        {% else %}
-	          <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+	          <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}-{{ post.number }} {{ post.title }}</a></li>
 	          {% assign previousChapter = post.chapter %}
 	        {% endif %}
 
