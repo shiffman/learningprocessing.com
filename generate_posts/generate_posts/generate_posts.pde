@@ -1,4 +1,4 @@
-String what = "exercise"; //<>//
+String what = "example"; //<>//
 
 String[] chapters = {
   "chp01_drawing", 
@@ -69,10 +69,10 @@ void setup() {
     output.println("chapter: " + chapter);
     output.println("number: " + number);
     
-    String cdn = "https://cdn.rawgit.com/shiffman/LearningProcessing-p5.js/master/";
+    String cdn = "/code/LearningProcessing-p5.js/";
     String chpname = chapters[int(chapter)-1]; 
     
-    String raw = "https://cdn.rawgit.com/shiffman/LearningProcessing/master/";
+    String raw = "/code/LearningProcessing/";
     output.println("js-files: " + cdn + chpname + "/" + originalname + "/sketch.js");
     output.println("pde-files: " + raw + chpname + "/" + originalname + "/" + originalname + ".pde");
     output.println("group: " + what);
