@@ -18,11 +18,13 @@ void setup() { //<>//
     int space = title.indexOf(" ");
     int number = int(title.substring(dot+1, space));
 
-    //String name = title.substring(colon+2, title.length());
+    String name = title.substring(space+1, title.length());
     //String perma = name.replaceAll(" ", "-");
 
     String video = data[3];
-    String vidnum = video.substring(28, video.length());
+    println(video);
+    String vidnum = video.substring(27, video.length());
+    println(vidnum);
 
     PrintWriter output = createWriter("videos/2015-08-15-"+chapter+"-"+number+".html");
     output.println("---");
@@ -37,7 +39,9 @@ void setup() { //<>//
     //group: video
 
     output.println("layout: videos");
-    output.println("title: " + title);
+    output.println("title: " + name);
+    
+    println(name);
     output.println("permalink: /videos/"+chapter+"-"+number);
     output.println("chapter: " + chapter);
     output.println("number: " + number);
@@ -48,7 +52,7 @@ void setup() { //<>//
     String[][] annotations = matchAll(fulltext, 
       "<div data-start=\"(.*?)\" data-end=\"(.*?)\">\\s+(.*?)\\s+</div>");
     for (int j = 0; j < annotations.length; j++) {
-      printArray(annotations[j]);
+      //printArray(annotations[j]);
       output.println("annotations: ");
       output.println("- start: " + annotations[j][1]);
       output.println("  end: " + annotations[j][2]);
