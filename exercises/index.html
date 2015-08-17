@@ -6,7 +6,8 @@ group: exerciseIndex
  <section id="content" class="col-md-5 col-md-offset-2">
 
     <h1>EXERCISES</h1>
-    <p>Here you'll find exercises directly linked to the book. You can follow the book with this website to interact with the sketches in each page. Have fun!</p>
+    <p> <p>Here you will find solutions for most of the exercises from Learning Processing organized by chapter.  If one is missing, feel free to <a href="https://github.com/shiffman/LearningProcessing.com/issues">let me know on github</a>.</p>
+</p>
     
     <ul class="page-contents">
     	{% assign previousChapter = 1 %}
@@ -15,9 +16,9 @@ group: exerciseIndex
           {% if post.group == "exercise" %}
 
           	{% if previousChapter == post.chapter %}
-              <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+              <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}-{{ post.number }} {{ post.title }}</a></li>
             {% else %}
-              <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}.{{ post.number }} {{ post.title }}</a></li>
+              <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}-{{ post.number }} {{ post.title }}</a></li>
               {% assign previousChapter = post.chapter %}
             {% endif %}
 

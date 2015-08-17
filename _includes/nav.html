@@ -13,9 +13,9 @@
                 {% if post.group == "example" %}
 
                     {% if previousChapter == post.chapter %}
-                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                     {% else %}
-                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                       {% assign previousChapter = post.chapter %}
                     {% endif %}
 
@@ -34,9 +34,9 @@
                 {% if post.group == "exercise" %}
                     
                      {% if previousChapter == post.chapter %}
-                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                     {% else %}
-                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                       {% assign previousChapter = post.chapter %}
                     {% endif %}
 
@@ -55,9 +55,9 @@
                   {% if post.group == "video" %}
                       
                     {% if previousChapter == post.chapter %}
-                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                     {% else %}
-                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}.{{post.number}} {{ post.title }}</a></li>
+                      <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                       {% assign previousChapter = post.chapter %}
                     {% endif %}
 
