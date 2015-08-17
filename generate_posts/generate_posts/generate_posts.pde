@@ -75,7 +75,7 @@ void setup() {
     String raw = "https://cdn.rawgit.com/shiffman/LearningProcessing/master/";
     output.println("js-files: " + cdn + chpname + "/" + originalname + "/sketch.js");
     output.println("pde-files: " + raw + chpname + "/" + originalname + "/" + originalname + ".pde");
-    output.println("group: example");
+    output.println("group: " + what);
     output.println("---");
     output.flush();
     output.close();
