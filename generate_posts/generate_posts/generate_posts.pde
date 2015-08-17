@@ -1,4 +1,4 @@
-String what = "example"; //<>//
+String what = "exercise"; //<>//
 
 String[] chapters = {
   "chp01_drawing", 
