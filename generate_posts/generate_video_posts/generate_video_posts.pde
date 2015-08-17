@@ -4,7 +4,7 @@ void setup() { //<>//
   File[] allposts = listFiles(path);
 
   for (int i = 0; i < allposts.length; i++) {
-  //for (int i = 0; i < 1; i++) {
+    //for (int i = 0; i < 1; i++) {
     String[] data = loadStrings(allposts[i].getAbsolutePath());
     String fulltext = join(data, " ");
 
@@ -22,9 +22,9 @@ void setup() { //<>//
     //String perma = name.replaceAll(" ", "-");
 
     String video = data[3];
-    println(video);
+    //println(video);
     String vidnum = video.substring(27, video.length());
-    println(vidnum);
+    //println(vidnum);
 
     PrintWriter output = createWriter("videos/2015-08-15-"+chapter+"-"+number+".html");
     output.println("---");
@@ -40,8 +40,8 @@ void setup() { //<>//
 
     output.println("layout: videos");
     output.println("title: " + name);
-    
-    println(name);
+
+    //println(name);
     output.println("permalink: /videos/"+chapter+"-"+number);
     output.println("chapter: " + chapter);
     output.println("number: " + number);
@@ -50,17 +50,30 @@ void setup() { //<>//
     output.println("group: video");
 
     String[][] annotations = matchAll(fulltext, 
-      "<div data-start=\"(.*?)\" data-end=\"(.*?)\">\\s+(.*?)\\s+</div>");
-    for (int j = 0; j < annotations.length; j++) {
-      //printArray(annotations[j]);
+      "<div data-start=\"(\\d+:\\d+)\" data-end=\"(\\d+:\\d+)\">\\s+(.*?)\\s+</div>");
+    //if (annotations != null) {
       output.println("annotations: ");
-      output.println("- start: " + annotations[j][1]);
-      output.println("  end: " + annotations[j][2]);
-      output.println("  content: " + annotations[j][3]);
-      //  // optional?
-      //  output.println("  gitURL: " + giturl);
-    }
+      for (int j = 0; j < annotations.length; j++) {
+        output.println("- start: " + annotations[j][1]);
+        output.println("  end: " + annotations[j][2]);
+        output.println("  content: " + annotations[j][3]);
+        //  // optional?
+        //  output.println("  gitURL: " + giturl);
+      }
+    //}
 
+    //String[][] annotations2 = matchAll(fulltext, 
+    //  "<div data-start=\"(\\d+:\\d+)\">\\s+(.*?)\\s+</div>");
+    ////println(annotations2);
+    //if (annotations2 != null) {
+    //  for (int j = 0; j < annotations2.length; j++) {
+    //    //printArray(annotations2[j]);
+    //    output.println("- start: " + annotations2[j][1]);
+    //    output.println("  content: " + annotations2[j][2]);
+    //    //  // optional?
+    //    //  output.println("  gitURL: " + giturl);
+    //  }
+    //}
 
     //annotations:
     //- start: 3.00
