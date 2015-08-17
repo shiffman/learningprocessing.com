@@ -9,13 +9,13 @@ var destination; // Destination image
 
 function loaded(data) {
   source = data;
+  destination = createImage(source.width, source.height, RGB);
 }
 
 function setup() {
   createCanvas(200, 200);
   devicePixelScaling(false);
   loadImage("/code/assets/sunflower.jpg", loaded);  
-  destination = createImage(source.width, source.height, RGB);
 
   // Temporary-ish fix for retina machines
   devicePixelScaling(false);
