@@ -6,19 +6,23 @@
 
 var img;
 
-function preload() {
-  img = loadImage("data/sunflower.jpg");
+function loaded(data) {
+  img = data;
 }
 
 function setup() {
-  createCanvas(200,200);
+  createCanvas(200, 200);
+  devicePixelScaling(false);
+  loadImage("/code/assets/sunflower.jpg", loaded);  
 }
 
 function draw() {
-  // Draw the image
-  image(img,0,0);
-  // Filter the window with a threshold effect
-  // 0.5 means threshold is 50% brightness
-  filter("threshold",0.5);
+  if (img) {
+    // Draw the image
+    image(img,0,0);
+    // Filter the window with a threshold effect
+    // 0.5 means threshold is 50% brightness
+    filter("threshold",0.5);
+  }
 }
 

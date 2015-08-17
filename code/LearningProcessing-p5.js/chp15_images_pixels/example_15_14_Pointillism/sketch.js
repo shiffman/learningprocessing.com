@@ -7,31 +7,34 @@
 var img;
 var pointillize = 16;
 
-function preload() {
-  img = loadImage("data/sunflower.jpg");
+function loaded(data) {
+  img = data;
 }
 
 function setup() {
-  createCanvas(200,200);
-  background(0);
+  createCanvas(200, 200);
+  devicePixelScaling(false);
+  loadImage("/code/assets/sunflower.jpg", loaded);  
 }
 
 function draw() {
-  
-  // Pick a random point
-  var x = floor(random(img.width));
-  var y = floor(random(img.height));
-  var loc = (x + y*img.width) * 4;
-  
-  // Look up the RGB color in the source image
-  img.loadPixels();
-  var r = img.pixels[loc    ];
-  var g = img.pixels[loc + 1];
-  var b = img.pixels[loc + 2];
-  noStroke();
-  
-  // Back to shapes! Instead of setting a pixel, we use the color 
-  // from a pixel to draw a circle.
-  fill(r,g,b,100);
-  ellipse(x,y,pointillize,pointillize); 
+  if (img) {
+    
+    // Pick a random point
+    var x = floor(random(img.width));
+    var y = floor(random(img.height));
+    var loc = (x + y*img.width) * 4;
+    
+    // Look up the RGB color in the source image
+    img.loadPixels();
+    var r = img.pixels[loc    ];
+    var g = img.pixels[loc + 1];
+    var b = img.pixels[loc + 2];
+    noStroke();
+    
+    // Back to shapes! Instead of setting a pixel, we use the color 
+    // from a pixel to draw a circle.
+    fill(r,g,b,100);
+    ellipse(x,y,pointillize,pointillize); 
+  }
 }

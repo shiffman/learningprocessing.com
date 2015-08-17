@@ -11,48 +11,51 @@ var matrix = [ [ -1, -1, -1 ] ,
                [ -1,  9, -1 ] ,
                [ -1, -1, -1 ] ];
 
-function preload() {
-  img = loadImage("data/sunflower.jpg");
+function loaded(data) {
+  img = data;
 }
 
 function setup() {
-  createCanvas(200,200);
+  createCanvas(200, 200);
   devicePixelScaling(false);
+  loadImage("/code/assets/sunflower.jpg", loaded);  
 }
 
 function draw() {
-  
-  // We're only going to process a portion of the image
-  // so let's set the whole image as the background first
-  image(img,0,0);
-  
-  // In this example we are only processing a section of the image-an 80 x 80 rectangle around the mouse location.  
-  var xstart = constrain(mouseX-w/2,0,img.width); 
-  var ystart = constrain(mouseY-w/2,0,img.height);
-  var xend = constrain(mouseX + w/2,0,img.width);
-  var yend = constrain(mouseY + w/2,0,img.height);
-  var matrixsize = 3;
-  
-  loadPixels();
-  img.loadPixels();
-  // Begin our loop for every pixel
-  for (var x = xstart; x < xend; x++ ) {
-    for (var y = ystart; y < yend; y++ ) {
-      // Each pixel location (x,y) gets passed into a function called convolution()
-      // The convolution() function returns a new color to be displayed.
-      var result = convolution(x ,y , matrix, matrixsize, img); 
-      var loc = (x + y * img.width) * 4;
-      pixels[loc    ] = result[0];
-      pixels[loc + 1] = result[1];
-      pixels[loc + 2] = result[2];
-      pixels[loc + 3] = 255;
-      
+  if (img) {
+    
+    // We're only going to process a portion of the image
+    // so let's set the whole image as the background first
+    image(img,0,0);
+    
+    // In this example we are only processing a section of the image-an 80 x 80 rectangle around the mouse location.  
+    var xstart = constrain(mouseX-w/2,0,img.width); 
+    var ystart = constrain(mouseY-w/2,0,img.height);
+    var xend = constrain(mouseX + w/2,0,img.width);
+    var yend = constrain(mouseY + w/2,0,img.height);
+    var matrixsize = 3;
+    
+    loadPixels();
+    img.loadPixels();
+    // Begin our loop for every pixel
+    for (var x = xstart; x < xend; x++ ) {
+      for (var y = ystart; y < yend; y++ ) {
+        // Each pixel location (x,y) gets passed into a function called convolution()
+        // The convolution() function returns a new color to be displayed.
+        var result = convolution(x ,y , matrix, matrixsize, img); 
+        var loc = (x + y * img.width) * 4;
+        pixels[loc    ] = result[0];
+        pixels[loc + 1] = result[1];
+        pixels[loc + 2] = result[2];
+        pixels[loc + 3] = 255;
+        
+      }
     }
+    updatePixels();
+    stroke(0);
+    noFill();
+    rect(xstart,ystart,w,w);
   }
-  updatePixels();
-  stroke(0);
-  noFill();
-  rect(xstart,ystart,w,w);
 }
 
 function convolution(x, y, matrix, matrixsize, img) {
