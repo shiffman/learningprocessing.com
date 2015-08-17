@@ -99,7 +99,7 @@ void setup() {
         //if (count == 0) {
           jspaths += cdn + chpname + "/" + originalname + "/sketch.js";
         } else {
-          String jsname = nm.replaceAll("\\.pde",".js");
+          String jsname = nm.replaceAll("\\.pde",".js").toLowerCase();
           jspaths += cdn + chpname + "/" + originalname + "/" + jsname;
         }
         count++;
