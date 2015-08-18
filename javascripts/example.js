@@ -3,7 +3,7 @@ $('document').ready(function(){
 	var JSfile 	= $('.js-files');
 	var PDEfile = $('.pde-files');
 
-	populateCodeWindow(PDEfile);
+	populateCodeWindow(JSfile);
 	createCodeNav(PDEfile);
 
 });
