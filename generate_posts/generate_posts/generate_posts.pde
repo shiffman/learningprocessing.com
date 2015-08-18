@@ -1,4 +1,4 @@
-String what = "exercise"; //<>//
+String what = "example"; //<>//
 
 String[] chapters = {
   "chp01_drawing", 
@@ -11,8 +11,8 @@ String[] chapters = {
   "chp08_objects", 
   "chp09_arrays", 
   "chp10_algorithms", 
-  "chp11_nothing",
-  "chp12_nothing",
+  "chp11_nothing", 
+  "chp12_nothing", 
   "chp13_mathematics", 
   "chp14_transformations", 
   "chp15_images_pixels", 
@@ -68,14 +68,46 @@ void setup() {
     output.println("title: " + title);
     output.println("chapter: " + chapter);
     output.println("number: " + number);
-    
-    String cdn = "https://cdn.rawgit.com/shiffman/LearningProcessing-p5.js/master/";
+
+    // How many PDE files?
+
+
+    String abspath = f.getAbsolutePath();
+    File[] pdes = listFiles(abspath);
+
+    String pdepaths = "";
+    String jspaths = "";
+
+    String raw = "/code/LearningProcessing/";
+    String cdn = "/code/LearningProcessing-p5.js/";
     String chpname = chapters[int(chapter)-1]; 
     
-    String raw = "https://cdn.rawgit.com/shiffman/LearningProcessing/master/";
-    output.println("js-files: " + cdn + chpname + "/" + originalname + "/sketch.js");
-    output.println("pde-files: " + raw + chpname + "/" + originalname + "/" + originalname + ".pde");
-    output.println("group: example");
+    int count = 0;
+    for (int j = 0; j < pdes.length; j++) {
+      String nm =pdes[j].getName();
+      if (nm.contains(".pde")) {
+        //println(pdes[j]);
+        if (count != 0) {
+          pdepaths += ",";
+          jspaths += ",";
+        }
+        pdepaths += raw + chpname + "/" + originalname + "/" + nm;
+        
+        
+        String nopde = nm.replaceAll("\\.pde","");
+        if (nopde.equals(f.getName())) {
+        //if (count == 0) {
+          jspaths += cdn + chpname + "/" + originalname + "/sketch.js";
+        } else {
+          String jsname = nm.replaceAll("\\.pde",".js").toLowerCase();
+          jspaths += cdn + chpname + "/" + originalname + "/" + jsname;
+        }
+        count++;
+      }
+    }
+    output.println("pde-files: " + pdepaths);
+    output.println("js-files: " + jspaths);
+    output.println("group: " + what);
     output.println("---");
     output.flush();
     output.close();
