@@ -17,9 +17,7 @@ layout: default
       <!-- Loop through JS FILES -->
       {% for file in page.js-files %}
         <input class="js-files" id="{{ file.label }}" type="hidden" value="{{ file.url }}"/>
-        {% if file.label == "sketch-1" %}
-          <script language="javascript" src="{{ file.url }}"></script>
-        {% endif %}
+        <script language="javascript" src="{{ file.url }}"></script>
       {% endfor %}
       <!-- Loop through PDE files -->
       {% for file in page.pde-files %}
