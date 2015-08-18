@@ -1,4 +1,4 @@
-String what = "exercise"; //<>//
+String what = "example"; //<>//
 
 String[] chapters = {
   "chp01_drawing", 
@@ -91,15 +91,15 @@ void setup() {
     for (int j = 0; j < pdes.length; j++) {
       String nm =pdes[j].getName();
       if (nm.contains(".pde")) {
-
-        pdefiles.append(codepath + chpname + "/" + originalname + "/" + nm);
-        pdegit.append(gitpath + chpname + "/" + originalname + "/" + nm);
         String nopde = nm.replaceAll("\\.pde", "");
         if (nopde.equals(f.getName())) {
-          //if (count == 0) {
-          jsfiles.append(codejspath + chpname + "/" + originalname + "/sketch.js");
-          jsgit.append(gitjspath + chpname + "/" + originalname + "/sketch.js");
+          pdefiles.insert(0, codepath + chpname + "/" + originalname + "/" + nm);
+          pdegit.insert(0, gitpath + chpname + "/" + originalname + "/" + nm);
+          jsfiles.insert(0, codejspath + chpname + "/" + originalname + "/sketch.js");
+          jsgit.insert(0, gitjspath + chpname + "/" + originalname + "/sketch.js");
         } else {
+          pdefiles.append(codepath + chpname + "/" + originalname + "/" + nm);
+          pdegit.append(gitpath + chpname + "/" + originalname + "/" + nm);
           String jsname = nm.replaceAll("\\.pde", ".js").toLowerCase();
           jsfiles.append(codejspath + chpname + "/" + originalname + "/" + jsname);
           jsgit.append(gitjspath + chpname + "/" + originalname + "/" + jsname);
