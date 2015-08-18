@@ -12,7 +12,7 @@ function populateCodeWindow(file) {
 
 	if(file.indexOf(',') === -1) {
 
-	  	$.get('/'+file).done(function(data){
+	  	$.get(file).done(function(data){
 
 			$('.code-container pre code').html(data);
 
@@ -21,7 +21,7 @@ function populateCodeWindow(file) {
 	} else {
 
 		var firstFile = file.split(',');
-		$.get('/'+firstFile[0]).done(function(data){
+		$.get(firstFile[0]).done(function(data){
 
 			$('.code-container pre code').html(data);
 			Prism.highlightAll();

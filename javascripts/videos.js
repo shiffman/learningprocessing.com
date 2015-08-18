@@ -58,9 +58,10 @@ $('.annotation-panel a').click(function(e){
 	e.preventDefault();
 
 	var container 	= $(this).closest('.annotation-panel');
-		url 		= container.attr('data-code');
+		url 		= container.attr('href');
+		displayCode = container.attr('data-displaycode');
 
-	if( url != "" || url != undefined ) {
+	if( displayCode == "true" ) {
 
 		$.get(url).done(function(data) {
 
