@@ -20,15 +20,13 @@ function initiateAnnotation() {
 	$('.annotation-panel').each(function(index, value){
 
 		var pop = $(this);
-		console.log(pop.attr('data-start'));
 
 		popcorn.code({ 
 
-			start: 1,
-			end: 5, 
+			start: pop.attr('data-start'),
+			end: pop.attr('data-end'), 
 			onStart: function(pop) { revealAnnotation(pop) },
-			onEnd: function(pop) { hideAnnotation(pop) },
-			onFrame: function() { console.log('On Frame') }
+			onEnd: function(pop) { hideAnnotation(pop) }
 
 		})
 
