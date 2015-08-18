@@ -75,38 +75,53 @@ void setup() {
     String abspath = f.getAbsolutePath();
     File[] pdes = listFiles(abspath);
 
-    String pdepaths = "";
-    String jspaths = "";
 
-    String raw = "/code/LearningProcessing/";
-    String cdn = "/code/LearningProcessing-p5.js/";
+    String codepath = "/code/LearningProcessing/";
+    String codejspath = "/code/LearningProcessing-p5.js/";
+
+    String gitpath = "https://github.com/shiffman/LearningProcessing/tree/master/";
+    String gitjspath = "https://github.com/shiffman/LearningProcessing-p5.js/tree/master/";
     String chpname = chapters[int(chapter)-1]; 
-    
-    int count = 0;
+
+    StringList pdefiles = new StringList();
+    StringList jsfiles = new StringList();
+    StringList pdegit = new StringList();
+    StringList jsgit = new StringList();
+
     for (int j = 0; j < pdes.length; j++) {
       String nm =pdes[j].getName();
       if (nm.contains(".pde")) {
-        //println(pdes[j]);
-        if (count != 0) {
-          pdepaths += ",";
-          jspaths += ",";
-        }
-        pdepaths += raw + chpname + "/" + originalname + "/" + nm;
-        
-        
-        String nopde = nm.replaceAll("\\.pde","");
+
+        pdefiles.append(codepath + chpname + "/" + originalname + "/" + nm);
+        pdegit.append(gitpath + chpname + "/" + originalname + "/" + nm);
+        String nopde = nm.replaceAll("\\.pde", "");
         if (nopde.equals(f.getName())) {
-        //if (count == 0) {
-          jspaths += cdn + chpname + "/" + originalname + "/sketch.js";
+          //if (count == 0) {
+          jsfiles.append(codejspath + chpname + "/" + originalname + "/sketch.js");
+          jsgit.append(gitjspath + chpname + "/" + originalname + "/sketch.js");
         } else {
-          String jsname = nm.replaceAll("\\.pde",".js").toLowerCase();
-          jspaths += cdn + chpname + "/" + originalname + "/" + jsname;
+          String jsname = nm.replaceAll("\\.pde", ".js").toLowerCase();
+          jsfiles.append(codejspath + chpname + "/" + originalname + "/" + jsname);
+          jsgit.append(gitjspath + chpname + "/" + originalname + "/" + jsname);
         }
-        count++;
       }
     }
-    output.println("pde-files: " + pdepaths);
-    output.println("js-files: " + jspaths);
+    output.println("pde-files: ");
+    for (int j = 0; j < pdefiles.size(); j++) {
+      String pde = pdefiles.get(j);
+      String git = pdegit.get(j);
+      output.println("  -");
+      output.println("    url: " + pde);
+      output.println("    github: " + git);
+    }
+    output.println("js-files: ");
+    for (int j = 0; j < jsfiles.size(); j++) {
+      String js = jsfiles.get(j);
+      String git = jsgit.get(j);
+      output.println("  -");
+      output.println("    url: " + js);
+      output.println("    github: " + git);
+    }
     output.println("group: " + what);
     output.println("---");
     output.flush();
