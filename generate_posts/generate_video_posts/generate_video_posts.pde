@@ -62,18 +62,18 @@ void setup() { //<>//
       }
     //}
 
-    //String[][] annotations2 = matchAll(fulltext, 
-    //  "<div data-start=\"(\\d+:\\d+)\">\\s+(.*?)\\s+</div>");
-    ////println(annotations2);
-    //if (annotations2 != null) {
-    //  for (int j = 0; j < annotations2.length; j++) {
-    //    //printArray(annotations2[j]);
-    //    output.println("- start: " + annotations2[j][1]);
-    //    output.println("  content: " + annotations2[j][2]);
-    //    //  // optional?
-    //    //  output.println("  gitURL: " + giturl);
-    //  }
-    //}
+    String[][] annotations2 = matchAll(fulltext, 
+     "<div data-start=\"(\\d+:\\d+)\">\\s+(.*?)\\s+</div>");
+    //println(annotations2);
+    if (annotations2 != null) {
+     for (int j = 0; j < annotations2.length; j++) {
+       //printArray(annotations2[j]);
+       output.println("- start: " + annotations2[j][1]);
+       output.println("  content: " + annotations2[j][2]);
+       //  // optional?
+       //  output.println("  gitURL: " + giturl);
+     }
+    }
 
     //annotations:
     //- start: 3.00
