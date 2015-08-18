@@ -3,18 +3,25 @@ $('document').ready(function(){
 	var JSfile 	= $('.js-files');
 	var PDEfile = $('.pde-files');
 
-	populateCodeWindow(JSfile);
+	populateCodeWindow(true, PDEfile);
 	createCodeNav(PDEfile);
 
 });
 
-function populateCodeWindow(file) {
+function populateCodeWindow(load, file) {
 
-	var url = file.first().val();
-
+	var url;
+	
+	if(load) {
+		url = file.first().val();
+	} else {
+		url = file;
+	}
+	
 	$.get(url).done(function(data){
 
 		$('.code-container pre code').html(data);
+		Prism.highlightAll();
 
 	});
 
@@ -58,7 +65,7 @@ function createCodeNav() {
 		e.preventDefault();
 
 		var PDEfile = $(this).attr('href');
-		populateCodeWindow(PDEfile);
+		populateCodeWindow(false, PDEfile);
 
 	});
 
