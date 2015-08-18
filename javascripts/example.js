@@ -1,7 +1,7 @@
 $('document').ready(function(){
 
-	var JSfile 	= $('#js-files').val();
-	var PDEfile = $('#pde-files').val();
+	var JSfile 	= $('.js-files');
+	var PDEfile = $('.pde-files');
 
 	populateCodeWindow(PDEfile);
 	createCodeNav(PDEfile);
@@ -10,27 +10,13 @@ $('document').ready(function(){
 
 function populateCodeWindow(file) {
 
-	if(file.indexOf(',') === -1) {
+	var url = file.first().val();
 
-	  	$.get(file).done(function(data){
+	$.get(url).done(function(data){
 
-			$('.code-container pre code').html(data);
-			Prism.highlightAll();
-			
-		});
+		$('.code-container pre code').html(data);
 
-	} else {
-
-		var firstFile = file.split(',');
-		$.get(firstFile[0]).done(function(data){
-
-			$('.code-container pre code').html(data);
-			Prism.highlightAll();
-
-		});
-
-	}
-	
+	});
 
 }
 
@@ -38,7 +24,6 @@ window.onload = function() {
 
   	var canvas = document.getElementById('defaultCanvas');
 
-  	console.log(canvas);
 	if( canvas == null ) {
 
 		// NO SKETCH AVAILABLE
@@ -51,38 +36,21 @@ window.onload = function() {
   		$(canvas).appendTo("#sketch-container").fadeIn(300);
 		
 	}
-
-
 	
 };
 
-function createCodeNav(PDE) {
+function createCodeNav() {
 
-	var array = PDE.split(',');
+	$('.pde-files').each(function(index, el) {
 
-	if(array.length > 1) {
+		var url  	= $(this).val();
+		var label 	= $(this).attr('data-label');
+		var link 	= url.substr(url.lastIndexOf('/') + 1);
+			link 	= link.replace('exercise_','');
 
-		for(i = 0; i < array.length; i++) {
-			
-			var link = array[i].substr(array[i].lastIndexOf('/') + 1); // Get string after last hash
-				link = link.replace('example_',''); // Remove Example 
-				link = link.replace(/_/g, ' '); // Remove Underscores
-				link = link.substring(5); // Remove Chapter Number
+		$('.code-tab').append('<a href="'+url+'" data-js="'+label+'" class="code-tab-link">'+link+'</a>');
 
-			$('.code-tab').append('<a href="'+array[i]+'" class="code-tab-link">'+link+'</a>');
-
-		}
-
-	} else {
-
-		var link = PDE.substr(PDE.lastIndexOf('/') + 1);
-			link = link.replace('example_','');
-			link = link.replace(/_/g, ' ');
-			link = link.substring(5);
-
-		$('.code-tab').append('<a href="'+PDE+'" class="code-tab-link">'+link+'</a>');
-
-	}
+	});
 
 	// Prevent default click and run code population functions
 	$('.code-tab-link').click(function(e){

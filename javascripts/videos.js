@@ -4,8 +4,11 @@ $('document').ready(function(){
 
 });
 
-var video = Popcorn.vimeo('.video-container', $('#video-url').val());
-	video.on('loadeddata', function(){
+var video = Popcorn.HTMLVimeoVideoElement( "#video" );
+	video.src = $('#video-url').val();
+
+var popcorn = Popcorn(video);
+	popcorn.on('loadeddata', function(){
 
 		// Fit Vids makes videos responsive among devices
 		$('.video-container').fitVids();
@@ -17,51 +20,51 @@ function initiateAnnotation() {
 	$('.annotation-panel').each(function(index, value){
 
 		var pop = $(this);
-		video.code({ 
-			start: pop.attr('data-start'),
-			end: pop.attr('data-end'), 
-			onStart: function() { revealAnnotation( value ); },
-			onEnd: function() { hideAnnotation(value); }
+		console.log(pop.attr('data-start'));
+
+		popcorn.code({ 
+
+			start: 1,
+			end: 5, 
+			onStart: function(pop) { revealAnnotation(pop) },
+			onEnd: function(pop) { hideAnnotation(pop) },
+			onFrame: function() { console.log('On Frame') }
 
 		})
 
 	});
+	
 }
 
 function revealAnnotation(target) {
-
-	$(target).addClass('in');
+	console.log(target);
+	target.addClass('in');
 
 }
 
 function hideAnnotation(target) {
 
-	$(target).removeClass('in');
+	console.log('Un Welcome');
+	target.removeClass('in');
 
 }
-
-$('.view-all').click(function() {
-
-	$('.annotation-panel').toggleClass('force-show');
-
-});
 
 $('.annotation-panel').click(function(){
 
 	var cueTime = $(this).attr('data-start');
-	video.currentTime(cueTime);
+	popcorn.currentTime(cueTime);
 
 });
 
 $('.annotation-panel a').click(function(e){	
 
-	e.preventDefault();
-
-	var container 	= $(this).closest('.annotation-panel');
-		url 		= container.attr('href');
-		displayCode = container.attr('data-displaycode');
+	var	url 		= $(this).attr('href');
+	var	displayCode = $(this).attr('data-displaycode');
 
 	if( displayCode == "true" ) {
+
+		e.preventDefault();
+		$('.code-window').slideUp(200);
 
 		$.get(url).done(function(data) {
 
@@ -69,11 +72,14 @@ $('.annotation-panel a').click(function(e){
 			Prism.highlightAll();
 			$('.code-window').slideDown(300);
 
+		})
+
+		.error(function(){
+
+			$('.code-window pre code').html('Sorry could not retrieve code.');
+			$('.code-window').slideDown(300);
+
 		});
-
-	} else {
-
-		window.location = url;
 
 	}
 

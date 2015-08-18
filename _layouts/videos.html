@@ -44,7 +44,7 @@ layout: default
 
       <!-- Loop through -->
       {% for annotation in page.annotations %}
-        <div class="annotation-panel row" data-start="{{ annotation.start }}" data-end="{{ annotation.end }}" data-code="{{ annotation.gitURL }}">
+        <div class="annotation-panel row" data-start="{{ annotation.start }}" data-end="{{ annotation.end }}" data-displaycode="{{ annotation.gitURL }}">
           <div class="col-xs-1">
             <span class="time-stamp">{{ annotation.start }}</span>
           </div>
@@ -64,6 +64,8 @@ layout: default
     </div>
 
     {% endif %}
+
+    <span class="background-explainer">WANT TO HELP WITH THESE ANNOTATIONS? <br><a href="email">CLICK HERE</a> TO CONTACT ME ABOUT CONTRIBUTING</span>
 
   </section>
 
