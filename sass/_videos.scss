@@ -1,11 +1,15 @@
 section#video-window {
 
 	padding-top: 29px;
+	background-color: white;
+    z-index: 100;
+    border-left: 2px solid #f1f1f1;
 
 	@media screen and (max-width: $break-medium) {
 
 		padding: 30px 30px;
 		height: auto !important;
+		border-left: none;
 
 	}
 

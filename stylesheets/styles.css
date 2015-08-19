@@ -8272,40 +8272,44 @@ h1.article-title {
 /* line 1, ../sass/_videos.scss */
 section#video-window {
   padding-top: 29px;
+  background-color: white;
+  z-index: 100;
+  border-left: 2px solid #f1f1f1;
 }
 @media screen and (max-width: 992px) {
   /* line 1, ../sass/_videos.scss */
   section#video-window {
     padding: 30px 30px;
     height: auto !important;
+    border-left: none;
   }
 }
-/* line 12, ../sass/_videos.scss */
+/* line 16, ../sass/_videos.scss */
 section#video-window .video-actions {
   margin: 15px auto;
 }
-/* line 18, ../sass/_videos.scss */
+/* line 22, ../sass/_videos.scss */
 section#video-window .video-container {
   margin-top: 25px;
 }
 @media screen and (max-width: 768px) {
-  /* line 18, ../sass/_videos.scss */
+  /* line 22, ../sass/_videos.scss */
   section#video-window .video-container {
     height: auto !important;
   }
 }
 
-/* line 32, ../sass/_videos.scss */
+/* line 36, ../sass/_videos.scss */
 .annotations {
   padding: 30px 30px 0px 30px;
 }
 @media screen and (max-width: 992px) {
-  /* line 32, ../sass/_videos.scss */
+  /* line 36, ../sass/_videos.scss */
   .annotations {
     padding: 30px 30px;
   }
 }
-/* line 42, ../sass/_videos.scss */
+/* line 46, ../sass/_videos.scss */
 .annotations h5 {
   font-family: "Lato", sans-serif;
   font-size: 12px;
@@ -8313,7 +8317,7 @@ section#video-window .video-container {
   margin: 0;
   font-weight: 600;
 }
-/* line 52, ../sass/_videos.scss */
+/* line 56, ../sass/_videos.scss */
 .annotations .annotation-panel {
   transition: opacity 0.4s;
   padding: 10px 0px 0px;
@@ -8322,39 +8326,39 @@ section#video-window .video-container {
   border-radius: 4px;
   opacity: 0.6;
 }
-/* line 61, ../sass/_videos.scss */
+/* line 65, ../sass/_videos.scss */
 .annotations .annotation-panel span {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   color: #8C8C8C;
   font-weight: 700;
 }
-/* line 70, ../sass/_videos.scss */
+/* line 74, ../sass/_videos.scss */
 .annotations .annotation-panel p {
   font-size: 15px;
 }
-/* line 74, ../sass/_videos.scss */
+/* line 78, ../sass/_videos.scss */
 .annotations .annotation-panel:hover, .annotations .annotation-panel.in {
   opacity: 1;
 }
 
-/* line 84, ../sass/_videos.scss */
+/* line 88, ../sass/_videos.scss */
 .rhs.annotation-window {
   z-index: 9992;
 }
-/* line 88, ../sass/_videos.scss */
+/* line 92, ../sass/_videos.scss */
 .rhs.annotation-window .code-window {
   display: none;
   padding: 0 15px 15px 15px;
 }
-/* line 93, ../sass/_videos.scss */
+/* line 97, ../sass/_videos.scss */
 .rhs.annotation-window .code-window pre {
   padding: 15px;
   background: #ffffff;
   border-color: #FFDE00;
 }
 
-/* line 105, ../sass/_videos.scss */
+/* line 109, ../sass/_videos.scss */
 a.download {
   padding: 15px;
   display: block;
@@ -8365,11 +8369,11 @@ a.download {
   color: #404040;
   font-size: 15px;
 }
-/* line 116, ../sass/_videos.scss */
+/* line 120, ../sass/_videos.scss */
 a.download img {
   margin-right: 15px;
 }
-/* line 122, ../sass/_videos.scss */
+/* line 126, ../sass/_videos.scss */
 a.download:hover {
   border: 1px solid #ED462F;
   text-decoration: none;
