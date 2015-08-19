@@ -10,7 +10,7 @@
 
 #defaultCanvas {
 
-	margin: 100px auto;
+	margin: 100px auto 0px;
 	position: relative;
 	display: none;
 
@@ -19,5 +19,24 @@
 		color: #7B7B7B !important;
 
 	}
+
+}
+
+.sketch-caption {
+
+	margin: 15px 30px;
+	display: none;
+
+	h4 {
+
+		color: #7B7B7B !important;
+
+	}
+
+}
+
+.code-container pre {
+
+	width: 1000px;
 
 }

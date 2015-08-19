@@ -8214,13 +8214,28 @@ button.close {
 
 /* line 11, ../sass/_exercises.scss */
 #defaultCanvas {
-  margin: 100px auto;
+  margin: 100px auto 0px;
   position: relative;
   display: none;
 }
 /* line 17, ../sass/_exercises.scss */
 #defaultCanvas h4 {
   color: #7B7B7B !important;
+}
+
+/* line 25, ../sass/_exercises.scss */
+.sketch-caption {
+  margin: 15px 30px;
+  display: none;
+}
+/* line 30, ../sass/_exercises.scss */
+.sketch-caption h4 {
+  color: #7B7B7B !important;
+}
+
+/* line 38, ../sass/_exercises.scss */
+.code-container pre {
+  width: 1000px;
 }
 
 /* line 3, ../sass/_article.scss */

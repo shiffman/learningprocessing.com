@@ -40,7 +40,8 @@ window.onload = function() {
 
 	} else {
 
-  		$(canvas).appendTo("#sketch-container").fadeIn(300);
+  		$(canvas).prependTo("#sketch-container").fadeIn(300);
+  		$('.sketch-caption').fadeIn(300);
 		
 	}
 	
