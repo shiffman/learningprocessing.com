@@ -18,8 +18,7 @@ title: Examples
           {% if previousChapter == post.chapter %}
               <li><a class="meta-link" href="{{ post.url }}">{{ post.chapter }}-{{ post.number }} {{ post.title }}</a></li>
 	        {% else %}
- 
-          {% assign chp = post.chapter | minus:1 %}
+            {% assign chp = post.chapter | minus:1 %}
             <li> <a class="chapter-header" href="#">Chapter {{ post.chapter }}: {{ site.data.chapters[chp] }}</a> </li>                  
 	          <li><a class="meta-link new-chapter" href="{{ post.url }}">{{ post.chapter }}-{{ post.number }} {{ post.title }}</a></li>
 	          {% assign previousChapter = post.chapter %}
