@@ -9,12 +9,15 @@
       {% if page.group == "example" %}
             <ul class="links-level-2">
               <li><a class="active-page" href="/examples">EXAMPLES</a></li>
+              <li> <a class="chapter-header" href="#">Chapter 1: {{ site.data.chapters[0]}}</a></li>
               {% for post in site.posts reversed %}
                 {% if post.group == "example" %}
 
                     {% if previousChapter == post.chapter %}
                       <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                     {% else %}
+                      {% assign chp = post.chapter | minus:1 %}
+                      <li> <a class="chapter-header" href="#">Chapter {{ post.chapter }}: {{ site.data.chapters[chp] }}</a> </li>                  
                       <li><a class="secondary-link new-chapter" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                       {% assign previousChapter = post.chapter %}
                     {% endif %}
