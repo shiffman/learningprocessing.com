@@ -29,7 +29,10 @@ $('.chapter-header').click(function(){
 	
 	$('.chapter-header').removeClass('new-chapter');
 	$(this).addClass('new-chapter');
-	$('li.chapter-'+chapter).toggleClass('hide');
+
+	$('.post-link').addClass('hide');
+
+	$('li.chapter-'+chapter).removeClass('hide');
 	$('li.chapter-'+chapter).last().css({'margin-bottom': '15px'});
 
 	localStorage["chapter"] = chapter;

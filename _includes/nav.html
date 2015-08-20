@@ -10,16 +10,25 @@
     {% if page.group == "example" %}
           <ul class="links-level-2">
             <li><a class="active-page" href="/examples">EXAMPLES</a></li>
-            <li><a class="chapter-header" href="#">Chapter 1: {{ site.data.chapters[0]}}</a></li>
+            <li><a class="chapter-header" data-chapter="{{ page.chapter }}" href="#">Chp 1: {{ site.data.chapters[0]}}</a></li>
             {% for post in site.posts reversed %}
               {% if post.group == "example" %}
 
                   {% if previousChapter == post.chapter %}
-                    <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                    {% if page.chapter == post.chapter %}
+                      <li class="post-link chapter-{{ post.chapter }}"><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                    {% else %}
+                      <li class="post-link hide chapter-{{ post.chapter }}"><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                    {% endif %}
                   {% else %}
                     {% assign chp = post.chapter | minus:1 %}
-                    <li> <a class="chapter-header new-chapter" href="#">Chapter {{ post.chapter }}: {{ site.data.chapters[chp] }}</a> </li>                  
-                    <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                      {% if page.chapter == post.chapter %}
+                        <li><a class="chapter-header new-chapter" data-chapter="{{ post.chapter }}" href="#">Chp {{ post.chapter }}: {{ site.data.chapters[chp] }}</a></li>                  
+                        <li class="post-link chapter-{{ post.chapter }}"><a class="secondary-link chapter-{{ post.chapter }}" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                      {% else %}
+                        <li><a class="chapter-header" data-chapter="{{ post.chapter }}" href="#">Chp {{ post.chapter }}: {{ site.data.chapters[chp] }}</a></li>                  
+                        <li class="post-link hide chapter-{{ post.chapter }}"><a class="secondary-link chapter-{{ post.chapter }}" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                      {% endif %}
                     {% assign previousChapter = post.chapter %}
                   {% endif %}
 
@@ -34,17 +43,26 @@
     {% endif %}
     {% if page.group == "exercise" %}
           <ul class="links-level-2">
-            <li><a class="active-page" href="/exercises">exerciseS</a></li>
-            <li><a class="chapter-header" href="#">Chapter 1: {{ site.data.chapters[0]}}</a></li>
+            <li><a class="active-page" href="/exercises">EXERCISES</a></li>
+            <li><a class="chapter-header" data-chapter="{{ page.chapter }}" href="#">Chp 1: {{ site.data.chapters[0]}}</a></li>
             {% for post in site.posts reversed %}
               {% if post.group == "exercise" %}
 
                   {% if previousChapter == post.chapter %}
-                    <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                    {% if page.chapter == post.chapter %}
+                      <li class="post-link chapter-{{ post.chapter }}"><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                    {% else %}
+                      <li class="post-link hide chapter-{{ post.chapter }}"><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                    {% endif %}
                   {% else %}
                     {% assign chp = post.chapter | minus:1 %}
-                    <li> <a class="chapter-header new-chapter" href="#">Chapter {{ post.chapter }}: {{ site.data.chapters[chp] }}</a> </li>                  
-                    <li><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                      {% if page.chapter == post.chapter %}
+                        <li><a class="chapter-header new-chapter" data-chapter="{{ post.chapter }}" href="#">Chp {{ post.chapter }}: {{ site.data.chapters[chp] }}</a></li>                  
+                        <li class="post-link chapter-{{ post.chapter }}"><a class="secondary-link chapter-{{ post.chapter }}" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                      {% else %}
+                        <li><a class="chapter-header" data-chapter="{{ post.chapter }}" href="#">Chp {{ post.chapter }}: {{ site.data.chapters[chp] }}</a></li>                  
+                        <li class="post-link hide chapter-{{ post.chapter }}"><a class="secondary-link chapter-{{ post.chapter }}" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                      {% endif %}
                     {% assign previousChapter = post.chapter %}
                   {% endif %}
 
@@ -60,24 +78,24 @@
     {% if page.group == "video" %}
           <ul class="links-level-2">
             <li><a class="active-page" href="/videos">VIDEOS</a></li>
-            <li><a class="chapter-header" data-chapter="{{ post.chapter }}" href="#">Chapter 1: {{ site.data.chapters[0]}}</a></li>
+            <!-- <li><a class="chapter-header" data-chapter="{{ post.chapter }}" href="#">Chapter 1: {{ site.data.chapters[0]}}</a></li> -->
             {% for post in site.posts reversed %}
               {% if post.group == "video" %}
 
                   {% if previousChapter == post.chapter %}
                     {% if page.chapter == post.chapter %}
-                      <li class="chapter-{{ post.chapter }}"><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                      <li class="post-link chapter-{{ post.chapter }}"><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                     {% else %}
-                      <li class="hide chapter-{{ post.chapter }}"><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                      <li class="post-link hide chapter-{{ post.chapter }}"><a class="secondary-link" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                     {% endif %}
                   {% else %}
                     {% assign chp = post.chapter | minus:1 %}
                       {% if page.chapter == post.chapter %}
-                        <li><a class="chapter-header new-chapter" data-chapter="{{ post.chapter }}" href="#">Chapter {{ post.chapter }}: {{ site.data.chapters[chp] }}</a></li>                  
-                        <li class="chapter-{{ post.chapter }}"><a class="secondary-link chapter-{{ post.chapter }}" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                        <li><a class="chapter-header new-chapter" data-chapter="{{ post.chapter }}" href="#">Chp {{ post.chapter }}: {{ site.data.chapters[chp] }}</a></li>                  
+                        <li class="post-link chapter-{{ post.chapter }}"><a class="secondary-link chapter-{{ post.chapter }}" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                       {% else %}
-                        <li><a class="chapter-header" data-chapter="{{ post.chapter }}" href="#">Chapter {{ post.chapter }}: {{ site.data.chapters[chp] }}</a></li>                  
-                        <li class="hide chapter-{{ post.chapter }}"><a class="secondary-link chapter-{{ post.chapter }}" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
+                        <li><a class="chapter-header" data-chapter="{{ post.chapter }}" href="#">Chp {{ post.chapter }}: {{ site.data.chapters[chp] }}</a></li>                  
+                        <li class="post-link hide chapter-{{ post.chapter }}"><a class="secondary-link chapter-{{ post.chapter }}" href="{{ post.url }}">{{post.chapter}}-{{post.number}} {{ post.title }}</a></li>
                       {% endif %}
                     {% assign previousChapter = post.chapter %}
                   {% endif %}
