@@ -8,14 +8,31 @@ $('document').ready(function(){
 
 });
 
+function setCodeDimensions() {
+
+	var windowHeight = $(window).height();
+	var containerHeight = $('.exercise-description').height() + $('.code-tab').height();
+	var codeContainerHeight = windowHeight - containerHeight;
+
+	$('.code-container').height(codeContainerHeight);
+
+}
+
 function populateCodeWindow(load, file) {
 
-	var url = file.first().val();
+	var url;
+	
+	if(load) {
+		url = file.first().val();
+	} else {
+		url = file;
+	}
 
 	$.get(url).done(function(data){
 
 		$('.code-container pre code').html(data);
 		Prism.highlightAll();
+		setCodeDimensions(); // Tighten up layout and set strict dimensions
 
 	});
 	
@@ -35,6 +52,7 @@ window.onload = function() {
 	} else {
 
   		$(canvas).appendTo("#sketch-container").fadeIn(300);
+  		$('.sketch-caption').fadeIn(300);
 		
 	}
 	

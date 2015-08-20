@@ -3,11 +3,7 @@ $('document').ready(function(){
 
 	var windowHeight = $(window).height();
 
-	if($('nav').height() > windowHeight) {
-
-		$('.links-level-2').css({'max-height': windowHeight - 350}).addClass('scroll-borders');
-		
-	}
+	$('.links-level-2').css({'max-height': windowHeight - 350}).addClass('scroll-borders');
 
 	$('nav').fadeIn(400);
 
@@ -24,5 +20,18 @@ $('nav').hover(function(){
 }, function(){
 
 	$('nav').removeClass('in');
+
+});
+
+$('.chapter-header').click(function(){
+
+	var chapter = $(this).attr('data-chapter');
+	
+	$('.chapter-header').removeClass('new-chapter');
+	$(this).addClass('new-chapter');
+	$('li.chapter-'+chapter).toggleClass('hide');
+	$('li.chapter-'+chapter).last().css({'margin-bottom': '15px'});
+
+	localStorage["chapter"] = chapter;
 
 });

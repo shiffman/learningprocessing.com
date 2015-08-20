@@ -8,6 +8,16 @@ $('document').ready(function(){
 
 });
 
+function setCodeDimensions() {
+
+	var windowHeight = $(window).height();
+	var containerHeight = $('.exercise-description').height() + $('.code-tab').height();
+	var codeContainerHeight = windowHeight - containerHeight;
+
+	$('.code-container').height(codeContainerHeight);
+
+}
+
 function populateCodeWindow(load, file) {
 
 	var url;
@@ -22,6 +32,7 @@ function populateCodeWindow(load, file) {
 
 		$('.code-container pre code').html(data);
 		Prism.highlightAll();
+		setCodeDimensions();
 
 	});
 

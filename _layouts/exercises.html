@@ -3,7 +3,7 @@ layout: default
 --- 
   <link href="/stylesheets/prism.css" rel="stylesheet">
 
-  <section id="code-window" class="col-md-4 col-md-offset-2 lhs">
+  <section id="code-window" class="col-md-4 col-md-offset-2 lhs {% if page.code-only %}code-only{% endif %}">
 
     <div class="exercise-description">
       <span class="reference-label">{{ page.chapter }}-{{ page.number }}</span>
@@ -31,10 +31,10 @@ layout: default
 
   </section>
 
-  <section id="sketch-container" class="rhs canvas text-center">
+  <section id="sketch-container" class="rhs canvas text-center {% if page.code-only %}code-only{% endif %}">
     <div class="sketch-caption">
       <h4>
-        Sketch Caption
+        {{ page.sketch-caption }}
       </h4>
     </div>
     <span class="background-explainer"><a href="http://p5js.org/" target="_blank">SKETCH RUNNING VIA P5.JS</a><br><a href="{{ page.js-files[0].github }}" class="extra-small" target="_blank">JS CODE</a> / <a href="{{ page.pde-files[0].github }}" class="extra-small" target="_blank">PDE CODE</a> <span class="extra-small">ON GITHUB</span></span>

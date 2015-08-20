@@ -362,6 +362,20 @@ canvas#sketch-container {
 		border-left: 3px solid #404040;
 		z-index: 3;
 
+		&.code-only {
+
+			width: 15%;
+
+			@media screen and (max-width: $break-medium) {
+				display: none !important;
+			}
+
+			.sketch-caption, #defaultCanvas {
+				display: none !important;
+			}
+
+		}
+
 	}
 
 	@media screen and (max-width: $break-medium) {
@@ -404,77 +418,6 @@ section#content {
 	@media screen and (max-width: $break-medium) {
 
 		margin-top: 100px;
-
-	}
-
-}
-
-section#code-window {
-
-	background: $white;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 44%;
-	border-left: 2px solid #f1f1f1;
-	padding: 0;
-	overflow: scroll;
-	z-index: 2;
-
-	@media screen and (max-width: $break-medium) {
-
-		width: 100%;
-    	position: static;
-    	height: auto !important;
-
-	}
-
-	@media screen and (max-width: $break-small) {
-
-		width: 100%;
-
-	}
-
-	.code-tab {
-
-		width: 100%;
-		background: $orange;
-
-		a {
-
-			display: inline-block;
-			padding: 0 15px;
-			line-height: 50px;
-			color: $white;
-			font-family: $lato;
-			font-size: $font-small;
-			font-weight: 700;
-			display: inline-block;
-
-			&:hover {
-
-				text-decoration: none;
-				background: rgba(0,0,0,0.05);
-
-			}
-
-		}
-
-	}
-
-	.code-container {
-
-		overflow: scroll;
-		padding: 15px;
-
-		pre {
-
-			border-radius: none;
-			background: none;
-			border: none;
-			
-		}
 
 	}
 
