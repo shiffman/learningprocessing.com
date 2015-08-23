@@ -35,6 +35,7 @@ function populateCodeWindow(load, file) {
 		while (lines[0].indexOf("/") === 0) {
 			lines.splice(0, 1);
 		}
+		data = lines.joing("\n");
 
 
 		$('.code-container pre code').html(data);
