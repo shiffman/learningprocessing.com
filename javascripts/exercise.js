@@ -30,6 +30,13 @@ function populateCodeWindow(load, file) {
 
 	$.get(url).done(function(data){
 
+		// Strip away an opening comments like "// Learning Processing"
+		var lines = data.split("\n");
+		while (lines[0].indexOf("/") === 0) {
+			lines.splice(0, 1);
+		}
+
+
 		$('.code-container pre code').html(data);
 		Prism.highlightAll();
 		setCodeDimensions(); // Tighten up layout and set strict dimensions
