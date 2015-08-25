@@ -11,6 +11,8 @@ section#video-window {
 
 		padding: 30px 30px;
 		height: auto !important;
+		margin-left: 0;
+		width: 100%;
 		border-left: none;
 
 	}
@@ -98,6 +100,12 @@ section#video-window {
 
 	z-index: 9992;
 	width: 35%;
+
+	@media screen and (max-width: $break-medium) {
+
+		width: 100%;
+
+	}
 
 	.code-window {
 
