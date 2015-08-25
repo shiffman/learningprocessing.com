@@ -1,14 +1,24 @@
 
 $('document').ready(function(){
 
+	// SET HEIGHT OF NAV
 	var windowHeight = $(window).height();
 
 	$('.links-level-2').css({'max-height': windowHeight - 350}).addClass('scroll-borders');
-
 	$('nav').fadeIn(500);
 
-	scrollToChapter();
 
+	// HIDE BUTTON IF ON HOMEPAGE
+	
+	if($(".home-flag").length > 0){
+
+	    $('.nav-cta').hide();
+	
+	}
+
+	// SCROLL TO CHAPTER IS SELECTED
+
+	scrollToChapter();
 });
 
 //
