@@ -48,7 +48,6 @@ $('.secondary-link, .page-contents a').click(function() {
 
 function scrollToChapter() {
 
-	console.log($('.chapter-'+localStorage["chapter"]+':first').offset().top);
 	var container 	= $('.links-level-2')
 	var scrollTo 	= $('.chapter-'+localStorage["chapter"]+':first');
 
