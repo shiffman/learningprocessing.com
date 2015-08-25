@@ -32,6 +32,9 @@ layout: default
   </section>
   
   <section id="sketch-container" class="rhs canvas text-center {% if page.code-only %}code-only{% endif %}">
+    {% if page.sketch-alternative %}
+      <img class="sketch-alternative" src="{{ page.sketch-alternative }}"/>
+    {% endif %}
     <div class="sketch-caption">
       <h4>{{ page.sketch-caption }}</h4>
     </div>
