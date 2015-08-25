@@ -1,32 +1,33 @@
+var video = Popcorn.vimeo( "#video", $('#video-url').val());
+//var popcorn = Popcorn(video);
+
 $('document').ready(function(){
 
-	 initiateAnnotation();
+	video.src = $('#video-url').val();
+	initiateAnnotation();
+	// video.on('loadeddata', function(){
+
+	// 	// Fit Vids makes videos responsive among devices
+	// 	$('.video-container').fitVids();
+
+	// });
 
 });
-
-var video = Popcorn.HTMLVimeoVideoElement( "#video" );
-	video.src = $('#video-url').val();
-
-var popcorn = Popcorn(video);
-	popcorn.on('loadeddata', function(){
-
-		// Fit Vids makes videos responsive among devices
-		$('.video-container').fitVids();
-
-	});
 
 function initiateAnnotation() {
 
 	$('.annotation-panel').each(function(index, value){
 
-		var pop = $(this);
+		var pop 		= $(this);
+		var start 		= Popcorn.util.toSeconds(pop.attr('data-start'));
+		var end 		= pop.attr('data-end');
 
-		popcorn.code({ 
+		video.code({ 
 
-			start: pop.attr('data-start'),
-			end: pop.attr('data-end'), 
-			onStart: function(pop) { revealAnnotation(pop) },
-			onEnd: function(pop) { hideAnnotation(pop) }
+			start: start,
+			end: end, 
+			onStart: function() { revealAnnotation(value) },
+			onEnd: function() { hideAnnotation(value) }
 
 		})
 
@@ -35,22 +36,21 @@ function initiateAnnotation() {
 }
 
 function revealAnnotation(target) {
-	console.log(target);
-	target.addClass('in');
+	
+	$(target).addClass('in');
 
 }
 
 function hideAnnotation(target) {
 
-	console.log('Un Welcome');
-	target.removeClass('in');
+	$(target).removeClass('in');
 
 }
 
 $('.annotation-panel').click(function(){
 
-	var cueTime = $(this).attr('data-start');
-	popcorn.currentTime(cueTime);
+	var cueTime = Popcorn.util.toSeconds($(this).attr('data-start'));
+	video.currentTime(cueTime);
 
 });
 
