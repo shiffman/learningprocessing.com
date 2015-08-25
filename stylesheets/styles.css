@@ -8439,33 +8439,38 @@ section#video-window .video-container {
   color: #8C8C8C;
   font-weight: 700;
 }
-/* line 76, ../sass/_videos.scss */
+/* line 74, ../sass/_videos.scss */
+.annotations .annotation-panel span:hover {
+  color: #ED462F;
+  cursor: pointer;
+}
+/* line 83, ../sass/_videos.scss */
 .annotations .annotation-panel p {
   font-size: 15px;
 }
-/* line 80, ../sass/_videos.scss */
+/* line 87, ../sass/_videos.scss */
 .annotations .annotation-panel:hover, .annotations .annotation-panel.in {
   opacity: 1;
 }
 
-/* line 90, ../sass/_videos.scss */
+/* line 97, ../sass/_videos.scss */
 .rhs.annotation-window {
   z-index: 9992;
   width: 35%;
 }
-/* line 95, ../sass/_videos.scss */
+/* line 102, ../sass/_videos.scss */
 .rhs.annotation-window .code-window {
   display: none;
   padding: 0 15px 15px 15px;
 }
-/* line 100, ../sass/_videos.scss */
+/* line 107, ../sass/_videos.scss */
 .rhs.annotation-window .code-window pre {
   padding: 15px;
   background: #ffffff;
   border-color: #FFDE00;
 }
 
-/* line 112, ../sass/_videos.scss */
+/* line 119, ../sass/_videos.scss */
 a.download {
   padding: 15px;
   display: block;
@@ -8476,11 +8481,11 @@ a.download {
   color: #404040;
   font-size: 15px;
 }
-/* line 123, ../sass/_videos.scss */
+/* line 130, ../sass/_videos.scss */
 a.download img {
   margin-right: 15px;
 }
-/* line 129, ../sass/_videos.scss */
+/* line 136, ../sass/_videos.scss */
 a.download:hover {
   border: 1px solid #ED462F;
   text-decoration: none;

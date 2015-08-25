@@ -71,6 +71,13 @@ section#video-window {
 			color: #8C8C8C;
 			font-weight: 700;
 
+			&:hover {
+
+				color: $orange;
+				cursor: pointer;
+
+			}
+
 		}
 
 		p {
