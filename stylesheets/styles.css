@@ -8234,11 +8234,16 @@ button.close {
 }
 
 /* line 38, ../sass/_exercises.scss */
+.sketch-alternative {
+  margin-top: 40px;
+}
+
+/* line 44, ../sass/_exercises.scss */
 .code-container pre {
   width: 900px;
 }
 
-/* line 44, ../sass/_exercises.scss */
+/* line 50, ../sass/_exercises.scss */
 section#code-window {
   background: #ffffff;
   position: fixed;
@@ -8251,12 +8256,12 @@ section#code-window {
   overflow: scroll;
   z-index: 2;
 }
-/* line 57, ../sass/_exercises.scss */
+/* line 63, ../sass/_exercises.scss */
 section#code-window.code-only {
   width: 69%;
 }
 @media screen and (max-width: 992px) {
-  /* line 44, ../sass/_exercises.scss */
+  /* line 50, ../sass/_exercises.scss */
   section#code-window {
     width: 100% !important;
     position: static;
@@ -8264,17 +8269,17 @@ section#code-window.code-only {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 44, ../sass/_exercises.scss */
+  /* line 50, ../sass/_exercises.scss */
   section#code-window {
     width: 100%;
   }
 }
-/* line 75, ../sass/_exercises.scss */
+/* line 81, ../sass/_exercises.scss */
 section#code-window .code-tab {
   width: 100%;
   background: #ED462F;
 }
-/* line 80, ../sass/_exercises.scss */
+/* line 86, ../sass/_exercises.scss */
 section#code-window .code-tab a {
   display: inline-block;
   padding: 0 15px;
@@ -8285,17 +8290,17 @@ section#code-window .code-tab a {
   font-weight: 700;
   display: inline-block;
 }
-/* line 91, ../sass/_exercises.scss */
+/* line 97, ../sass/_exercises.scss */
 section#code-window .code-tab a:hover {
   text-decoration: none;
   background: rgba(0, 0, 0, 0.05);
 }
-/* line 102, ../sass/_exercises.scss */
+/* line 108, ../sass/_exercises.scss */
 section#code-window .code-container {
   overflow: scroll;
   padding: 15px;
 }
-/* line 107, ../sass/_exercises.scss */
+/* line 113, ../sass/_exercises.scss */
 section#code-window .code-container pre {
   border-radius: none;
   background: none;
