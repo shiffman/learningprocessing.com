@@ -145,7 +145,7 @@ nav {
 	position: fixed;
 	top: 125px;
 	left: 0px;
-	width: 240px;
+	width: 290px;
 	font-family: $lato;
 	font-size: $font-small;
 	font-weight: 700;
@@ -154,7 +154,7 @@ nav {
 
 	a.active-page {
 
-		color: $black !important;
+		color: #A3A391 !important;
 
 	}
 
@@ -254,6 +254,7 @@ nav {
 
 			margin: 15px 0;
 			padding: 10px 0px 10px 25px;
+			position: relative;
   			overflow: scroll;
 
   			&.scroll-borders {
@@ -266,6 +267,20 @@ nav {
 			li a {
 
 				opacity: 1;
+				display: inline-block;
+				text-transform: capitalize;
+				max-width: 190px;
+
+			}
+
+			.chapter-number {
+
+				display: inline-block; 
+				width: 25px;
+				color: $orange;
+    			margin-right: 7px;
+    			text-align: right;
+    			vertical-align: top;
 
 			}
 
@@ -307,7 +322,9 @@ nav {
 .chapter-header {
 
 	text-transform: uppercase;
-	margin-top: 5px;
+	margin-top: 2px;
+	text-transform: uppercase  !important;
+	color: $black !important;
 
 }
 
@@ -696,6 +713,12 @@ header {
   		transform: translateY(-50%);
 
   	}
+
+}
+
+.hide-link {
+
+	display: none;
 
 }
 

@@ -2,6 +2,8 @@ section#video-window {
 
 	padding-top: 29px;
 	background-color: white;
+	width: 45%;
+	margin-left: 20%;
     z-index: 100;
     border-left: 2px solid #f1f1f1;
 
@@ -88,6 +90,7 @@ section#video-window {
 .rhs.annotation-window {
 
 	z-index: 9992;
+	width: 35%;
 
 	.code-window {
 

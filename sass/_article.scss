@@ -40,9 +40,34 @@ h1.article-title {
 
 		list-style-type: none;
 
-		a {
+		&.chapter-header {
+
+			font-family: $lato ;
+			font-weight: 600;
+			font-size: 14px;
 			border-left: 2px solid $grey;
-			padding: 2px 15px;
+			padding: 15px 15px 5px 10px;
+
+			&:first-of-type {
+
+				padding-top: 5px;
+
+			}
+
+		}
+
+		a {
+			transition: border 0.4s;
+			border-left: 2px solid $grey;
+			padding: 2px 20px;
+			font-size: 13px;
+			text-transform: capitalize;
+
+			span {
+				display: inline-block;
+				margin-right: 7px;
+			}
+
 			&:hover {
 				border-left: 2px solid $orange;
 				text-decoration: none;
