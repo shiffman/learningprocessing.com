@@ -16,11 +16,11 @@ title: Examples
         {% if post.group == "example" %}
 
               {% if previousChapter == post.chapter %}
-                <li><a class="meta-link" href="{{ post.url }}"><span>{{ post.chapter }}-{{ post.number }}</span> {{ post.title }}</a></li>
+                <li><a class="meta-link" data-chapter="{{ post.chapter }}" href="{{ post.url }}"><span>{{ post.chapter }}-{{ post.number }}</span> {{ post.title }}</a></li>
             {% else %}
               {% assign chp = post.chapter | minus:1 %}
                 <li class="new-chapter chapter-header">Chapter {{ post.chapter }}: {{ site.data.chapters[chp] }}</li>                  
-                <li><a class="meta-link" href="{{ post.url }}"><span>{{ post.chapter }}-{{ post.number }}</span> {{ post.title }}</a></li>
+                <li><a class="meta-link" data-chapter="{{ post.chapter }}" href="{{ post.url }}"><span>{{ post.chapter }}-{{ post.number }}</span> {{ post.title }}</a></li>
               {% assign previousChapter = post.chapter %}
             {% endif %}
 

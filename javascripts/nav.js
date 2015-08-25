@@ -38,7 +38,7 @@ $('.chapter-header').click(function(){
 
 });
 
-$('.secondary-link').click(function() {
+$('.secondary-link, .page-contents a').click(function() {
 
 	var chapter = $(this).attr('data-chapter');
 
@@ -48,15 +48,15 @@ $('.secondary-link').click(function() {
 
 function scrollToChapter() {
 
-	console.log($('.chapter-'+localStorage["chapter"]+':first-of-type').offset().top);
+	console.log($('.chapter-'+localStorage["chapter"]+':first').offset().top);
 	var container 	= $('.links-level-2')
-	var scrollTo 	= $('.chapter-'+localStorage["chapter"]+':first-of-type');
+	var scrollTo 	= $('.chapter-'+localStorage["chapter"]+':first');
 
 	$(container).animate({
 
 	    scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop() - 30
 	
-	}, 1000);
+	}, 10);
 
 }
 

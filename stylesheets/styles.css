@@ -8701,7 +8701,7 @@ nav.level-2 ul.links-level-2 li a {
 /* line 276, ../sass/styles.scss */
 nav.level-2 ul.links-level-2 .chapter-number {
   display: inline-block;
-  width: 25px;
+  width: 35px;
   color: #ED462F;
   margin-right: 7px;
   text-align: right;
