@@ -9052,16 +9052,21 @@ header .mobile-nav-button a {
   .vert-center {
     position: relative;
     top: 50%;
+    -webkit-transform: translateY(-50%);
+    /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+    -ms-transform: translateY(-50%);
+    /* IE 9 */
     transform: translateY(-50%);
+    /* IE 10, Fx 16+, Op 12.1+ */
   }
 }
 
-/* line 719, ../sass/styles.scss */
+/* line 721, ../sass/styles.scss */
 .hide-link {
   display: none;
 }
 
-/* line 725, ../sass/styles.scss */
+/* line 727, ../sass/styles.scss */
 .simplebox {
   outline: none;
   border: none !important;

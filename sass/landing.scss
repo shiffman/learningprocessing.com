@@ -568,7 +568,9 @@ header {
 
 		position: absolute;
   		top: 50%;
-  		transform: translateY(-50%);
+  		-webkit-transform: translateY(-50%); /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+     	-ms-transform: translateY(-50%); /* IE 9 */
+        transform: translateY(-50%); /* IE 10, Fx 16+, Op 12.1+ */
 
   	}
 

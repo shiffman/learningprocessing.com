@@ -17,7 +17,6 @@ $(document).ready(function(){
 	$('#menu-btn').click(function(e){
 
 		e.stopPropagation();
-		console.log('click');
 		$('nav').addClass('open');
 
 	});
@@ -34,7 +33,6 @@ $(document).ready(function(){
 
 $(window).on('scroll', function() {
 
-	console.log('scroll');
 	if ($(this).scrollTop() > 40) {
 
         $('.stamp').addClass('scroll-hide');
