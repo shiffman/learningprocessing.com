@@ -34,8 +34,10 @@ $('nav').hover(function(){
 
 });
 
-$('.chapter-header').click(function(){
+$('.chapter-header').click(function(e){
 
+	e.stopPropagation();
+	
 	var chapter = $(this).attr('data-chapter');
 	
 	$('.chapter-header').removeClass('new-chapter');
