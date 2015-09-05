@@ -17,7 +17,7 @@ $(document).ready(function(){
 	$('#menu-btn').click(function(e){
 
 		e.stopPropagation();
-		$('nav').addClass('open');
+		$('nav').toggleClass('open');
 
 	});
 
