@@ -9,7 +9,11 @@ layout: default
     <h1 class="article-title">{{ page.title }}</h1>
     {{ content }}
 
-    <input id="video-url" type="hidden" value="{{ page.video }}">
+    <!--<input id="video-url" type="hidden" value="{{ page.video }}">-->
+    <!-- replacing above vimeo url with youtube one below-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ page.youtube }}" frameborder="0" allowfullscreen></iframe>
+
+    
     <div id="video" class="video-container" style="height: 300px"></div>
 
     <div class="video-actions">
@@ -20,7 +24,7 @@ layout: default
           {% endif %}
         </div>
         <div class="col-xs-6 text-right">
-          <a href="{{ page.youtube }}" class="meta-link fullscreen">VIEW ON YOUTUBE</a>
+          <a href="https://vimeo.com/{{ page.vimeo }}" class="meta-link fullscreen">VIEW ON VIMEO</a>
         </div>
       </div>
     </div>
