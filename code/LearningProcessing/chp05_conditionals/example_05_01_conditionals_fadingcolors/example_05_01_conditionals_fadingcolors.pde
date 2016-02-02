@@ -15,10 +15,9 @@ void setup() {
 
 void draw() {
   // Draw stuff
-  background(r,g,b);  
+  background(r, g, b);  
   stroke(255);
-  line(width/2,0,width/2,height);
-
+  line(width/2, 0, width/2, height);
 
   // If the mouse is on the right side of the screen is equivalent to 
   // "if mouseX is greater than width divided by 2."
