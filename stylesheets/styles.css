@@ -8213,13 +8213,13 @@ button.close {
 }
 
 /* line 11, ../sass/_exercises.scss */
-#defaultCanvas {
+#defaultCanvas0 {
   margin: 100px auto 0px;
   position: relative;
   display: none;
 }
 /* line 17, ../sass/_exercises.scss */
-#defaultCanvas h4 {
+#defaultCanvas0 h4 {
   color: #7B7B7B !important;
 }
 
@@ -8827,7 +8827,7 @@ canvas#sketch-container {
   }
 }
 /* line 410, ../sass/styles.scss */
-.rhs.canvas.code-only .sketch-caption, .rhs.canvas.code-only #defaultCanvas {
+.rhs.canvas.code-only .sketch-caption, .rhs.canvas.code-only #defaultCanvas0 {
   display: none !important;
 }
 @media screen and (max-width: 992px) {

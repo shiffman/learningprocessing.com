@@ -47,28 +47,22 @@ function populateCodeWindow(load, file) {
 
 window.onload = function() {
 
-  	var canvas = document.getElementById('defaultCanvas');
+  var canvas = document.getElementById('defaultCanvas0');
 
 	if( canvas == null && $('.sketch-alternative').length == 0) {
-
 		// NO SKETCH AVAILABLE
 		$('#sketch-container').append('<div id="defaultCanvas" style="display: block"><h4>NO SKETCH AVAILABLE</h4></div>');
 		$('.background-explainer').hide();
 		
-
 	} else {
-
   		$(canvas).prependTo("#sketch-container").fadeIn(300);
   		$('.sketch-caption').fadeIn(300);
 		
 	}
 
 	if($('.sketch-alternative').length != 0) {
-
 		$('.sketch-caption').fadeIn(300);
-
 	}
-	
 };
 
 function createCodeNav() {
