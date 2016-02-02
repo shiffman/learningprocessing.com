@@ -15,27 +15,27 @@ int spacing = 10; // How far apart is each line
 int len = 20;     // Length of each line
 
 // Draw the first leg.
-line(x,y,x,y + len); 
+line(x, y, x, y + len); 
 // Add spacing so the next leg appears 10 pixels to the right.
 x = x + spacing; 
 
 // Continue this process for each leg, repeating it over and over.
-line(x,y,x,y + len); 
+line(x, y, x, y + len); 
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);
 x = x + spacing;
-line(x,y,x,y + len);
+line(x, y, x, y + len);

@@ -4,7 +4,7 @@
 
 // Example 5-9: Simple Gravity
 
-var x = 320;   // x location of square
+var x = 240;   // x location of square
 var y = 0;     // y location of square
 
 var speed = 0;   // speed of square
