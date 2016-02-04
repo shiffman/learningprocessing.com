@@ -4,7 +4,7 @@
 
 // Example 7-5: Zoog with functions
 
-float x = 320;
+float x = 240;
 float y = 180;
 float w = 60;
 float h = 60;

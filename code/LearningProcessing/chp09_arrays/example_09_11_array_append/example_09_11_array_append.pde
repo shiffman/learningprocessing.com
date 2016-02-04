@@ -9,16 +9,17 @@ float gravity = 0.1;
 
 void setup() {
   size(480, 270);
-  
+
   // Initialize ball index 0
-  balls[0] = new Ball(50,0,24);
+  balls[0] = new Ball(50, 0, 24);
 }
 
 void draw() {
   background(255);
-  
-  // Update and display all balls
-  for (int i = 0; i < balls.length; i ++ ) { // Whatever the length of that array, update and display all of the objects.
+
+  // Whatever the length of that array, 
+  // update and display all of the objects.
+  for (int i = 0; i < balls.length; i++ ) { 
     balls[i].gravity();
     balls[i].move();
     balls[i].display();
@@ -27,8 +28,8 @@ void draw() {
 
 void mousePressed() {
   // A new ball object
-  Ball b = new Ball(mouseX,mouseY,24); // Make a new object at the mouse location.
-  balls = (Ball[]) append(balls,b);
+  Ball b = new Ball(mouseX, mouseY, 24); // Make a new object at the mouse location.
+  balls = (Ball[]) append(balls, b);
 
   // Here, the function, append() adds an element to the end of the array. 
   // append() takes two arguments. The first is the array you want to append to, and the second is the thing you want to append. 

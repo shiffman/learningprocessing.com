@@ -15,14 +15,18 @@ void setup() {
 
 void draw() {
   background(255);
-  move(); // Instead of writing out all the code about the ball is draw(), we simply call three functions. How do we know the names of these functions? We made them up!
+  // Instead of writing out all the code about the ball is draw(), I 
+  // simply call three functions. How do I know the names of these 
+  // functions? I made them up!
+  move(); 
   bounce();
   display();
 }
 
 // Where should functions be placed?
-// You can define your functions anywhere in the code outside of setup() and draw().
-// However, the convention is to place your function definitions below draw().
+// You can define your functions anywhere in the code 
+// outside of setup() and draw(). However, the convention 
+// is to place your function definitions below draw().
 
 // A function to move the ball
 void move() { 
@@ -42,5 +46,5 @@ void bounce() {
 void display() {
   stroke(0);
   fill(175);
-  ellipse(x,height/2,32,32);
+  ellipse(x, height/2, 32, 32);
 }

@@ -4,8 +4,8 @@
 
 // Example 9-9: An array of Car objects
 
-
-// The Car class does not change whether we are making one car, 100 cars or 1,000 cars!
+// The Car class does not change whether one car, 
+// 100 cars or 1,000 cars!
 class Car { 
   color c;
   float xpos;

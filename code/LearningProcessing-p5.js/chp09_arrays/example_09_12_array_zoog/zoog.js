@@ -29,11 +29,11 @@ function Zoog(tempX, tempY, tempW, tempH, tempEyeSize) {
       line(this.x-this.w/4,i,this.x + this.w/4,i);
     }
     // Draw Zoog's body
-    stroke(255);
+    stroke(0);
     fill(175);
     rect(this.x,this.y,this.w/6,this.h);
     // Draw Zoog's head
-    stroke(255);
+    stroke(0);
     fill(255);
     ellipse(this.x,this.y-this.h,this.w,this.h);
     // Draw Zoog's eyes

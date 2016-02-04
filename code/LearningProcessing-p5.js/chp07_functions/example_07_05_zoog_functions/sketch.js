@@ -4,7 +4,7 @@
 
 // Example 7-5: Zoog with functions
 
-var x = 320;
+var x = 240;
 var y = 180;
 var w = 60;
 var h = 60;

@@ -9,7 +9,8 @@ Car myCar2; // Two objects!
 
 void setup() {
   size(480, 270);
-  myCar1 = new Car(color(51), 0, 100, 2); // Parameters go inside the parentheses when the object is constructed.
+  // Arguments go inside the parentheses when the object is constructed.  
+  myCar1 = new Car(color(51), 0, 100, 2); 
   myCar2 = new Car(color(151), 0, 300, 1);
 }
 
@@ -21,13 +22,16 @@ void draw() {
   myCar2.display();
 }
 
-class Car { // Even though there are multiple objects, we still only need one class. No matter how many cookies we make, only one cookie cutter is needed.Isn’t object-oriented programming swell?
+// Even though there are multiple objects, only  one class is needed. 
+// No matter how many cookies you make, only one cookie cutter is needed.
+class Car { 
   color c;
   float xpos;
   float ypos;
   float xspeed;
 
-  Car(color tempC, float tempXpos, float tempYpos, float tempXspeed) { // The Constructor is defined with arguments.
+  // The Constructor is defined with parameters.  
+  Car(color tempC, float tempXpos, float tempYpos, float tempXspeed) { 
     c = tempC;
     xpos = tempXpos;
     ypos = tempYpos;
