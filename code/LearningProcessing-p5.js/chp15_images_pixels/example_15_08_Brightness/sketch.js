@@ -8,7 +8,7 @@ var img;
 
 function setup() {
   createCanvas(200, 200);
-  devicePixelScaling(false);
+  pixelDensity(1);
   loadImage("/code/assets/sunflower.jpg", loaded);  
 }
 

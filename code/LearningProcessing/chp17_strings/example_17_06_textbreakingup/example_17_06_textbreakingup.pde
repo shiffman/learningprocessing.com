@@ -21,10 +21,10 @@ void setup() {
   letters = new Letter[message.length()];
 
   // Initialize Letters at the correct x location
-  int x = 216;
+  int x = 125;
   for (int i = 0; i < message.length (); i ++ ) {
     // Letter objects are initialized with their location within the String as well as what character they should display.
-    letters[i] = new Letter(x, 180, message.charAt(i)); 
+    letters[i] = new Letter(x, 140, message.charAt(i)); 
     x += textWidth(message.charAt(i));
   }
 }
@@ -45,4 +45,3 @@ void draw() {
     }
   }
 }
-

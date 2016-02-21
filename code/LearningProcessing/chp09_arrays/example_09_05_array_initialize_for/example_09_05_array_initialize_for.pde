@@ -6,6 +6,6 @@
 
 float[] values = new float[1000];
 
-for (int n = 0; n < 1000; n ++ ) {
-  values[n] = random(0,10);
+for (int n = 0; n < 1000; n++) {
+  values[n] = random(0, 10);
 }

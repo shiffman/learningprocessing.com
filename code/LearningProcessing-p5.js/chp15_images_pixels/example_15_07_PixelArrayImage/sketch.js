@@ -8,16 +8,16 @@ var img;
 
 function setup() {
   createCanvas(200, 200);
-  devicePixelScaling(false);
+  pixelDensity(1);
   loadImage("/code/assets/sunflower.jpg", loaded);  
 }
 
 function loaded(data) {
   img = data;
-}
+//}
 
-function draw() {
-  if (img) {
+//function draw() {
+  //if (img) {
     loadPixels();
 
     // We must also call loadPixels() on the PImage since we are going to read its pixels.
@@ -42,5 +42,6 @@ function draw() {
     }
 
     updatePixels();
-  }
-}
+  //}
+  //noLoop();
+//}

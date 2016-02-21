@@ -8,7 +8,7 @@
 PFont f;  
 
 void setup() {
-  size(640, 480);
+  size(480, 270);
 
   // Step 3: Create Font
   f = createFont("Arial", 16);
@@ -22,4 +22,3 @@ void draw() {
   // Step 6: Display Text
   text("Mmmmm ... Strings ...", 10, height/2);
 }
-

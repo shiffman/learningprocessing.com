@@ -5,7 +5,7 @@
 // Example 6-9: Simple while loop with interactivity
 
 void setup() {
-  size(255,255);
+  size(480, 270);
 }
 
 void draw() {
@@ -17,11 +17,15 @@ void draw() {
   // While i is less than the width of the window
   while (i < width) {
     noStroke();
-    // The distance between the current rectangle and the mouse is equal to the absolute value of the difference between i and mouseX.
+    // The distance between the current rectangle 
+    // and the mouse is equal to the absolute value 
+    // of the difference between i and mouseX.
     float distance = abs(mouseX - i); 
-    // That distance is used to fill the color of a rectangle at horizontal location i.
+    
+    // That distance is used to fill the color of 
+    // a rectangle at horizontal location i.
     fill(distance);
-    rect(i,0,10,height);
+    rect(i, 0, 10, height);
     // Increase i by 10
     i += 10;
   }

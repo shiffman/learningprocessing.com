@@ -22,11 +22,11 @@ void draw() {
 
   // Draw rectangle on left
   fill(c1, 0, c2);
-  rect(0, 0, 320, 360);
+  rect(0, 0, 240, 270);
 
   // Draw rectangle of right
   fill(c2, 0, c1);
-  rect(320, 0, 320, 360);
+  rect(240, 0, 240, 270);
 
   // Adjust color values
   c1 = c1 + c1Change;

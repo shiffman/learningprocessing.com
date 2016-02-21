@@ -8,6 +8,6 @@ float[] values = new float[1000];
 
 int n = 0;
 while (n < 1000) {
-  values[n] = random(0,10);
+  values[n] = random(0, 10);
   n = n + 1;
 }

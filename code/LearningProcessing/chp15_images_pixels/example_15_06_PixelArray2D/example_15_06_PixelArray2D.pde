@@ -15,14 +15,16 @@ for (int x = 0; x < width; x++ ) {
   for (int y = 0; y < height; y++ ) {
 
     // Use the formula to find the 1D location
-    int loc = x + y * width; // The location in the pixel array is calculated via our formula: 1D pixel location = x + y * width
+    int loc = x + y * width; 
 
-      if (x % 2 == 0) { // If we are an even column
+    // If even column
+    if (x % 2 == 0) { 
       pixels[loc] = color(255);
-    } else { // If we are an odd column
-      pixels[loc] = color(0); //   We use the column number (x) to determine whether the color should be black or white.
+      // If odd column
+    } else { 
+      pixels[loc] = color(0);
     }
   }
 }
 
-updatePixels();
+  updatePixels();

@@ -24,9 +24,12 @@ void draw() {
   // mouseX position determines speed factor for moveZoog function
   float factor = constrain(mouseX/10, 0, 5);
 
-  // The code for changing the variables associated with Zoog and displaying Zoog is moved outside of draw() and into functions called here. 
-  // The functions are given arguments, such as “Jiggle Zoog by the following factor” 
-  // and “draw Zoog with the following eye color.
+  // The code for changing the variables associated 
+  // with Zoog and displaying Zoog is moved 
+  // outside of draw() and into functions called here. 
+  // The functions are given arguments, such 
+  // as "Jiggle Zoog by the following factor"
+  // and "draw Zoog with the following eye color."
   jiggleZoog(factor);
   drawZoog(c);
 }

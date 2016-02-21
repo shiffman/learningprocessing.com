@@ -12,7 +12,7 @@ function loaded(data) {
 
 function setup() {
   createCanvas(200, 200);
-  devicePixelScaling(false);
+  pixelDensity(1);
   loadImage("/code/assets/sunflower.jpg", loaded);  
 }
 
@@ -23,6 +23,7 @@ function draw() {
     // Filter the window with a threshold effect
     // 0.5 means threshold is 50% brightness
     filter("threshold",0.5);
+    noLoop();
   }
 }
 

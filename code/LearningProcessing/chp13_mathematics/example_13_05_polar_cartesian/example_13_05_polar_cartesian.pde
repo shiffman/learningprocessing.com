@@ -23,9 +23,9 @@ void draw() {
   // Draw an ellipse at x,y
   noStroke();
   fill(0);
-  ellipse(x + width/2, y + height/2, 16, 16); // Adjust for center of window
+  // Adjust for center of window
+  ellipse(x + width/2, y + height/2, 16, 16); 
 
   // Increment the angle
   theta += 0.01;
 }
-

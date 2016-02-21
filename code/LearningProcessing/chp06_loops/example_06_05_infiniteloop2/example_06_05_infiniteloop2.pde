@@ -8,7 +8,7 @@ int y = 80;        // Vertical location of each line
 int x = 0;         // Horizontal location of first line
 int spacing = 10;  // How far apart is each line
 int len = 20;      // Length of each line
-int endLegs = 150; // Where should the lines stop?
+int endLegs = 480; // Where should the lines stop?
 
 void setup() {
   size(480, 270);
@@ -19,10 +19,15 @@ void draw() {
   stroke(255);
   x = 0;
   
-  // The spacing variable, which sets the distance in between each line, is assigned a value equal to mouseX divided by two.
+  // The spacing variable, which sets the distance 
+  // in between each line, is assigned a value 
+  // equal to mouseX divided by two.
+  spacing = constrain(mouseX / 2, 4, width);
+
   // THIS LINE IS COMMENTED OUT SO THAT THE SKETCH DOES NOT CRASH
   // IF YOU PUT IT BACK IN THIS SKETCH WILL CRASH!
   // spacing = mouseX / 2; 
+  
   
   // Exit Condition: when x is greater than endlegs.
   while (x <= endLegs) { 

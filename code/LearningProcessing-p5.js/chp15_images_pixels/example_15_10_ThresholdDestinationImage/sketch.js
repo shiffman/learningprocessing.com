@@ -14,11 +14,10 @@ function loaded(data) {
 
 function setup() {
   createCanvas(200, 200);
-  devicePixelScaling(false);
   loadImage("/code/assets/sunflower.jpg", loaded);  
 
   // Temporary-ish fix for retina machines
-  devicePixelScaling(false);
+  pixelDensity(1);
 }
 
 function draw() {
@@ -55,5 +54,6 @@ function draw() {
     destination.updatePixels();
     // Display the destination
     image(destination,0,0);
+    noLoop();
   }
 }

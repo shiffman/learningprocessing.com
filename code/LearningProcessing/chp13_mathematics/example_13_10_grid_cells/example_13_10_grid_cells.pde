@@ -12,27 +12,26 @@ int cols = 32;
 int rows = 18;
 
 void setup() {
-  size(480, 270);
+  size(320, 180);
   grid = new Cell[cols][rows];
 
   // The counter variables i and j are also the column and row numbers
   // In this example, they are used as arguments to the constructor for each object in the grid.
-  for (int i = 0; i < cols; i++ ) {
-    for (int j = 0; j < rows; j++ ) {
+  for (int i = 0; i < cols; i++) {
+    for (int j = 0; j < rows; j++) {
       // Initialize each object
-      grid[i][j] = new Cell(i*20, j*20, 20, 20, i + j);
+      grid[i][j] = new Cell(i*10, j*10, 10, 10, i + j);
     }
   }
 }
 
 void draw() {
   background(0);
-  for (int i = 0; i < cols; i ++ ) {     
-    for (int j = 0; j < rows; j ++ ) {
+  for (int i = 0; i < cols; i++) {     
+    for (int j = 0; j < rows; j++) {
       // Oscillate and display each object
       grid[i][j].oscillate();
       grid[i][j].display();
     }
   }
 }
-

@@ -14,7 +14,7 @@ var threshold = 20;
 
 function setup() {
   createCanvas(320, 240);
-  devicePixelScaling(false);
+  pixelDensity(1);
   video = createCapture(VIDEO);
   video.size(width,height);
   video.hide();

@@ -19,7 +19,11 @@ function draw() {
   stroke(255);
   x = 0;
   
-  // The spacing variable, which sets the distance in between each line, is assigned a value equal to mouseX divided by two.
+  // The spacing variable, which sets the distance 
+  // in between each line, is assigned a value 
+  // equal to mouseX divided by two.
+  spacing = constrain(mouseX / 2, 4, width);
+
   // THIS LINE IS COMMENTED OUT SO THAT THE SKETCH DOES NOT CRASH
   // IF YOU PUT IT BACK IN THIS SKETCH WILL CRASH!
   // spacing = mouseX / 2; 
