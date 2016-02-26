@@ -11,7 +11,7 @@ void setup() {
   size(480, 270);
   // Arguments go inside the parentheses when the object is constructed.  
   myCar1 = new Car(color(51), 0, 100, 2); 
-  myCar2 = new Car(color(151), 0, 300, 1);
+  myCar2 = new Car(color(151), 0, 200, 1);
 }
 
 void draw() {
