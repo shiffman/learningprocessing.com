@@ -44,4 +44,4 @@ function loaded(data) {
     updatePixels();
   //}
   //noLoop();
-//}
+}
